@@ -25,7 +25,7 @@ function App() {
         const reader = new FileReader();
         reader.onloadend = function() {
             const base64Data = reader.result.split(',')[1];
-            const apiKey = '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';
+            const apiKey = process.env.REACT_APP_AI_API_KEY;
             const openAIEndpoint = 'https://api.openai.com/v1/audio/transcriptions';
             console.log(base64Data)
             const data = JSON.stringify({ file: base64Data, model: "whisper-1" });
