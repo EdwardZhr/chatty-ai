@@ -21,7 +21,7 @@ jobs:
 
     - name: Deploy to GitHub Pages
       run: |
-        echo "AI_API_KEY=${{ secrets.AI_API_KEY }}" >> .env
+        echo "REACT_APP_AI_API_KEY=${{ secrets.AI_API_KEY }}" >> .env
 
     - name: Deploy
       run: npm run deploy
