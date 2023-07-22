@@ -6,9 +6,11 @@ function App() {
   const [mediaRecorder, setMediaRecorder] = useState(null);
   const chunksRef = useRef([]);
   const [audioURL, setAudioURL] = useState(null)
+  const [transcription, setTranscription] = useState('');
+  const openAIEndpoint = 'https://api.openai.com/v1/audio/transcriptions';
+  const apiKey = process.env.REACT_APP_AI_API_KEY;
 
   useEffect(() => {
-    console.log('hello world')
     const getUserMedia = async () => {
       const stream = await  navigator.mediaDevices.getUserMedia({audio: true});
       const recorder = new MediaRecorder(stream);
@@ -18,34 +20,63 @@ function App() {
       }
 
       recorder.onstop = () => {
-        const audioBlob = new Blob(chunksRef.current, {'type': 'audio/ogg; codecs=opus'})
+        const audioBlob = new Blob(chunksRef.current, {'type': 'audio/wav'})
         chunksRef.current = [];
-        setAudioURL(window.URL.createObjectURL(audioBlob))
+        // setAudioURL(window.URL.createObjectURL(audioBlob))
+        
+        const audioFile = new File([audioBlob], 'audio.wav', { type: 'audio/wav' });
+        setAudioURL(window.URL.createObjectURL(audioFile))
+        const formData = new FormData();
+        formData.append('file', audioFile);
+        formData.append('model', 'whisper-1');
 
-        const reader = new FileReader();
-        reader.onloadend = function() {
-            const base64Data = reader.result.split(',')[1];
-            const apiKey = process.env.REACT_APP_AI_API_KEY;
-            const openAIEndpoint = 'https://api.openai.com/v1/audio/transcriptions';
-            console.log(base64Data)
-            const data = JSON.stringify({ file: base64Data, model: "whisper-1" });
-
-            fetch(openAIEndpoint, {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${apiKey}`,
-                    'Content-Type': 'application/json'
-                },
-                body: data
-            })
-            .then(response => response.json())
-            .then(result => {
-                console.log('Ответ от OpenAI:');
-                console.log(result);
-            })
-            .catch(error => console.error('Ошибка при отправке аудио на OpenAI API:', error));
+        fetch(openAIEndpoint, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${apiKey}`,
+          },
+          body: formData 
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Ошибка при отправке аудио на OpenAI API');
           }
-        reader.readAsDataURL(audioBlob);
+          return response.json();
+        })
+        .then(result => {
+          if (result && result[0] && result[0].text) {
+            setTranscription(result[0].text);
+          } else {
+            setTranscription('Не удалось распознать речь');
+          }
+        })
+        .catch(error => {
+          console.error('Ошибка при отправке аудио на OpenAI API:', error.message);
+          setTranscription('Произошла ошибка');
+        });
+
+        // const reader = new FileReader();
+        // reader.onloadend = function() {
+        //     const base64Data = reader.result.split(',')[1];
+        //     console.log(base64Data)
+        //     const data = JSON.stringify({ file: base64Data, model: "whisper-1" });
+
+        //     fetch(openAIEndpoint, {
+        //         method: 'POST',
+        //         headers: {
+        //             'Authorization': `Bearer ${apiKey}`,
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: data
+        //     })
+        //     .then(response => response.json())
+        //     .then(result => {
+        //         console.log('Ответ от OpenAI:');
+        //         console.log(result);
+        //     })
+        //     .catch(error => console.error('Ошибка при отправке аудио на OpenAI API:', error));
+        //   }
+        // reader.readAsDataURL(audioBlob);
       }
 
       setMediaRecorder(recorder);      
@@ -55,8 +86,6 @@ function App() {
   }, [])
 
   function handleStartRecording() {
-    console.log(process.env.REACT_APP_API_KEY)
-    console.log(process.env.REACT_APP_AI_API_KEY)
     setState('Record')
     mediaRecorder.start()
   }
@@ -66,36 +95,6 @@ function App() {
     mediaRecorder.stop();
   };
 
-  // function sendAudio(e) {
-  //   mediaRecorder.onstop = function() {
-  //       const reader = new FileReader();
-  //       reader.onloadend = function() {
-  //           const base64Data = reader.result.split(',')[1];
-  //           const apiKey = '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';
-  //           const openAIEndpoint = 'https://api.openai.com/v1/voice-calls';
-
-  //           const data = JSON.stringify({ audio: base64Data });
-
-  //           setState('Initial')
-  //           fetch(openAIEndpoint, {
-  //               method: 'POST',
-  //               headers: {
-  //                   'Authorization': `Bearer ${apiKey}`,
-  //                   'Content-Type': 'application/json'
-  //               },
-  //               body: data
-  //           })
-  //           .then(response => response.json())
-  //           .then(result => {
-  //               console.log('Ответ от OpenAI:');
-  //               console.log(result);
-  //           })
-  //           .catch(error => console.error('Ошибка при отправке аудио на OpenAI API:', error));
-  //       };
-  //       reader.readAsDataURL(audioBlob);
-  //   };
-  // }
-
   return (
     <div className="App">
       <div className="container">
@@ -103,6 +102,7 @@ function App() {
             {audioURL && <audio controls src={audioURL}>
             </audio>}
             {audioURL && <a href={audioURL} download='audio'>Скачать</a>}
+            <div>{transcription}</div>
           </div>
 
           <div className="controllers">
