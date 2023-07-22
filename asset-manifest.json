@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/chatty-ai/static/css/main.073c9b0a.css",
-    "main.js": "/chatty-ai/static/js/main.1a155baf.js",
+    "main.js": "/chatty-ai/static/js/main.9fd922d5.js",
     "static/js/787.7ffbbae1.chunk.js": "/chatty-ai/static/js/787.7ffbbae1.chunk.js",
     "index.html": "/chatty-ai/index.html",
     "main.073c9b0a.css.map": "/chatty-ai/static/css/main.073c9b0a.css.map",
-    "main.1a155baf.js.map": "/chatty-ai/static/js/main.1a155baf.js.map",
+    "main.9fd922d5.js.map": "/chatty-ai/static/js/main.9fd922d5.js.map",
     "787.7ffbbae1.chunk.js.map": "/chatty-ai/static/js/787.7ffbbae1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.1a155baf.js"
+    "static/js/main.9fd922d5.js"
   ]
 }
