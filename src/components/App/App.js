@@ -54,8 +54,7 @@ function App() {
   }, [])
 
   function handleStartRecording() {
-    console.log(process.env)
-    console.log(process.env.AI_API_KEY)
+    console.log(process.env.REACT_APP_API_KEY)
     setState('Record')
     mediaRecorder.start()
   }
