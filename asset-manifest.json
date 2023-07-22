@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.768c83b1.js",
-    "static/js/787.7ffbbae1.chunk.js": "/static/js/787.7ffbbae1.chunk.js",
-    "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.768c83b1.js.map": "/static/js/main.768c83b1.js.map",
-    "787.7ffbbae1.chunk.js.map": "/static/js/787.7ffbbae1.chunk.js.map"
+    "main.css": "/chatty-ai/static/css/main.073c9b0a.css",
+    "main.js": "/chatty-ai/static/js/main.b754b124.js",
+    "static/js/787.7ffbbae1.chunk.js": "/chatty-ai/static/js/787.7ffbbae1.chunk.js",
+    "index.html": "/chatty-ai/index.html",
+    "main.073c9b0a.css.map": "/chatty-ai/static/css/main.073c9b0a.css.map",
+    "main.b754b124.js.map": "/chatty-ai/static/js/main.b754b124.js.map",
+    "787.7ffbbae1.chunk.js.map": "/chatty-ai/static/js/787.7ffbbae1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.768c83b1.js"
+    "static/js/main.b754b124.js"
   ]
 }
