@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import { useState, useRef, useEffect } from 'react';
 import './App.css';
 
@@ -54,6 +55,8 @@ function App() {
   }, [])
 
   function handleStartRecording() {
+    console.log(process.env)
+    console.log(process.env.AI_API_KEY)
     setState('Record')
     mediaRecorder.start()
   }
