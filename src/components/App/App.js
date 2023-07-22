@@ -22,10 +22,9 @@ function App() {
       recorder.onstop = () => {
         const audioBlob = new Blob(chunksRef.current, {'type': 'audio/wav'})
         chunksRef.current = [];
-        // setAudioURL(window.URL.createObjectURL(audioBlob))
+        setAudioURL(window.URL.createObjectURL(audioBlob))
         
         const audioFile = new File([audioBlob], 'audio.wav', { type: 'audio/wav' });
-        setAudioURL(window.URL.createObjectURL(audioFile))
         const formData = new FormData();
         formData.append('file', audioFile);
         formData.append('model', 'whisper-1');
@@ -44,39 +43,12 @@ function App() {
           return response.json();
         })
         .then(result => {
-          if (result && result[0] && result[0].text) {
-            setTranscription(result[0].text);
-          } else {
-            setTranscription('Не удалось распознать речь');
-          }
+          setTranscription(result.text);
         })
         .catch(error => {
           console.error('Ошибка при отправке аудио на OpenAI API:', error.message);
           setTranscription('Произошла ошибка');
         });
-
-        // const reader = new FileReader();
-        // reader.onloadend = function() {
-        //     const base64Data = reader.result.split(',')[1];
-        //     console.log(base64Data)
-        //     const data = JSON.stringify({ file: base64Data, model: "whisper-1" });
-
-        //     fetch(openAIEndpoint, {
-        //         method: 'POST',
-        //         headers: {
-        //             'Authorization': `Bearer ${apiKey}`,
-        //             'Content-Type': 'application/json'
-        //         },
-        //         body: data
-        //     })
-        //     .then(response => response.json())
-        //     .then(result => {
-        //         console.log('Ответ от OpenAI:');
-        //         console.log(result);
-        //     })
-        //     .catch(error => console.error('Ошибка при отправке аудио на OpenAI API:', error));
-        //   }
-        // reader.readAsDataURL(audioBlob);
       }
 
       setMediaRecorder(recorder);      
