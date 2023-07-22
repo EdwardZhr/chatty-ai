@@ -8,6 +8,7 @@ function App() {
   const [audioURL, setAudioURL] = useState(null)
 
   useEffect(() => {
+    console.log('hello world')
     const getUserMedia = async () => {
       const stream = await  navigator.mediaDevices.getUserMedia({audio: true});
       const recorder = new MediaRecorder(stream);
