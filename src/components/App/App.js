@@ -11,7 +11,7 @@ function App() {
   const apiKey = process.env.REACT_APP_AI_API_KEY;
 
   useEffect(() => {
-    console.log('hi')
+    console.log(apiKey)
     const getUserMedia = async () => {
       const stream = await  navigator.mediaDevices.getUserMedia({audio: true});
       const recorder = new MediaRecorder(stream);
