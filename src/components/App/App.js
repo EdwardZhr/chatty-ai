@@ -56,7 +56,7 @@ function App() {
     }
     getUserMedia()
       .catch(error => console.log('Error accessing microphone:', error));
-  }, [])
+  }, [apiKey])
 
   function handleStartRecording() {
     setState('Record')
