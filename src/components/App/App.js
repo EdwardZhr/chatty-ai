@@ -58,7 +58,7 @@ function App() {
     }
     getUserMedia()
       .catch(error => console.log('Error accessing microphone:', error));
-  }, [apiKey])
+  }, [apiKey, testKey])
 
   function handleStartRecording() {
     setState('Record')
@@ -79,7 +79,7 @@ function App() {
             {audioURL && <a href={audioURL} download='audio'>Скачать</a>}
             <div>{transcription}</div>
           </div>
-
+          
           <div className="controllers">
             {(state === 'Initial' && 
               <button onClick={handleStartRecording}>Start</button>)
@@ -87,6 +87,7 @@ function App() {
             <button onClick={handleStopRecording}>Stop</button>)
             }
           </div>
+          <div>Хелло</div>
       </div>
     </div>
   );
