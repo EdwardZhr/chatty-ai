@@ -8,6 +8,7 @@ function App() {
   const [audioURL, setAudioURL] = useState(null)
   const [transcription, setTranscription] = useState('');
   const openAIEndpoint = 'https://api.openai.com/v1/audio/transcriptions';
+  const apiUrl = 'https://api.openai.com/v1/chat/completions';
   const apiKey = process.env.REACT_APP_APISecret;
   const testKey = process.env.REACT_APP_TEST_KEY
 
@@ -47,7 +48,31 @@ function App() {
           return response.json();
         })
         .then(result => {
-          setTranscription(result.text);
+          fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+                Authorization: `Bearer ${apiKey}`,
+           },
+            body: JSON.stringify({
+              model: 'gpt-3.5-turbo', 
+              messages: [
+                 {
+                    role: 'user',
+                    content: result.text,
+                 },
+              ],
+           }),
+         })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Ошибка при отправке аудио на OpenAI API');
+            }
+            return response.json();
+          })
+          .then(result => {
+            setTranscription(result.choices[0].message.content);
+          })
         })
         .catch(error => {
           console.error('Ошибка при отправке аудио на OpenAI API:', error.message);
