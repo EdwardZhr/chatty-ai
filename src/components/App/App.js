@@ -8,11 +8,12 @@ function App() {
   const [audioURL, setAudioURL] = useState(null)
   const [transcription, setTranscription] = useState('');
   const openAIEndpoint = 'https://api.openai.com/v1/audio/transcriptions';
-  const apiKey = process.env.REACT_APP_AI_API_KEY;
+  const apiKey = process.env.REACT_APP_APISecret;
   const testKey = process.env.REACT_APP_TEST_KEY
 
   useEffect(() => {
     console.log(!!apiKey)
+    console.log(apiKey)
     console.log(testKey)
     const getUserMedia = async () => {
       const stream = await  navigator.mediaDevices.getUserMedia({audio: true});
