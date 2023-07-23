@@ -12,7 +12,7 @@ function App() {
   const testKey = process.env.REACT_APP_TEST_KEY
 
   useEffect(() => {
-    console.log(apiKey)
+    console.log(!!apiKey)
     console.log(testKey)
     const getUserMedia = async () => {
       const stream = await  navigator.mediaDevices.getUserMedia({audio: true});
