@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: github-pages
     env:
-      REACT_APP_AI_API_KEY: ${{ secrets.REACT_APP_AI_API_KEY }}
+      REACT_APP_APISECRET: ${{ secrets.REACT_APP_APISECRET }}
       REACT_APP_TEST_KEY: testtesttesttest
     steps:
       - name: Checkout
