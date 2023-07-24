@@ -7,6 +7,7 @@ function App() {
   const chunksRef = useRef([]);
   const [audioURL, setAudioURL] = useState(null)
   const [transcription, setTranscription] = useState('');
+  const [question, setQuestion] = useState('');
   const openAIEndpoint = 'https://api.openai.com/v1/audio/transcriptions';
   const apiUrl = 'https://api.openai.com/v1/chat/completions';
   const testKey = process.env.REACT_APP_TEST_KEY;
@@ -46,6 +47,7 @@ function App() {
           return response.json();
         })
         .then(result => {
+          setQuestion(result.text)
           fetch(apiUrl, {
             method: 'POST',
             headers: {
@@ -101,7 +103,8 @@ function App() {
             {audioURL && <audio controls src={audioURL}>
             </audio>}
             {audioURL && <a href={audioURL} download='audio'>Скачать</a>}
-            <div>{transcription}</div>
+            <div>Запрос:{question}</div>
+            <div>Ответ:{transcription}</div>
           </div>
           
           <div className="controllers">
