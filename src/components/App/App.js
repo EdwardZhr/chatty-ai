@@ -113,7 +113,7 @@ function App() {
             <button onClick={handleStopRecording}>Stop</button>)
             }
           </div>
-          <div>Тест</div>
+          <div>Тест1</div>
       </div>
     </div>
   );
