@@ -9,8 +9,8 @@ function App() {
   const [transcription, setTranscription] = useState('');
   const openAIEndpoint = 'https://api.openai.com/v1/audio/transcriptions';
   const apiUrl = 'https://api.openai.com/v1/chat/completions';
-  const apiKey = process.env.REACT_APP_APISECRET;
-  const testKey = process.env.REACT_APP_TEST_KEY
+  const testKey = process.env.REACT_APP_TEST_KEY;
+  const apiKey = process.env.REACT_APP_APISECRET.split(',').reverse().join('');
 
   useEffect(() => {
     console.log(testKey)
