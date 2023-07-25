@@ -1,0 +1,37 @@
+.chatAiScreen {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   margin: 24px 34px;
+}
+
+.chatAiScreen__box {
+   display: flex;
+   justify-content: space-between;
+}
+
+.chatAiScreen__box-audio {}
+
+.chatAiScreen__box-param {
+   display: flex;
+}
+
+.chatAiScreen__list-param {
+   display: flex;
+}
+
+.chatAiScreen__box-recording {
+   display: flex;
+}
+
+.chatAiScreen__box-time {
+   display: flex;
+}
+
+.chatAiScreen__box-send {
+   display: flex;
+}
+
+.chatAiScreen__recording-img {
+   width: 350px;
+}

@@ -1,5 +1,10 @@
-import { useState, useRef, useEffect } from 'react';
 import './App.css';
+import { useState, useRef, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Saitbar from '../Saitbar/Saitbar';
+import MainScreen from '../MainScreen/MainScreen'
+import ChatAiScreen from '../ChatAiScreen/ChatAiScreen';
+
 
 function App() {
   const [state, setState] = useState('Initial');
@@ -9,11 +14,14 @@ function App() {
   const [transcription, setTranscription] = useState('');
   const openAIEndpoint = 'https://api.openai.com/v1/audio/transcriptions';
   const apiUrl = 'https://api.openai.com/v1/chat/completions';
-  const testKey = process.env.REACT_APP_TEST_KEY;
-  const apiKey = process.env.REACT_APP_APISECRET.split(',').reverse().join('');
+  // const testKey = process.env.REACT_APP_TEST_KEY;
+  // const apiKey = process.env.REACT_APP_APISECRET.split(',').reverse().join('');
+  // my code
+  const testKey = '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'
+  const apiKey = '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'
 
   useEffect(() => {
-    console.log(testKey)
+    //  console.log(testKey)
     const getUserMedia = async () => {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const recorder = new MediaRecorder(stream);
@@ -96,7 +104,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">
+      {/* <div className="container">
         <div className="display">
           {audioURL && <audio controls src={audioURL}>
           </audio>}
@@ -113,8 +121,31 @@ function App() {
         </div>
         <div>Тест2</div>
         <div>very good</div>
-      </div>
-    </div>
+      </div> */}
+      <Routes>
+
+        <Route path='/chatty-ai' element={
+          <div className='container'>
+            <Saitbar />
+            <MainScreen />
+          </div>
+        } />
+
+        <Route path='/chatty-recording' element={
+          <>
+            <div className='container'>
+              <Saitbar />
+              <ChatAiScreen />
+            </div>
+
+
+
+          </>
+        } />
+
+      </Routes>
+
+    </div >
   );
 }
 
