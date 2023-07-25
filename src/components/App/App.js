@@ -32,6 +32,7 @@ function App() {
         const formData = new FormData();
         formData.append('file', audioFile);
         formData.append('model', 'whisper-1');
+        formData.append('language', 'ru')
 
         fetch(openAIEndpoint, {
           method: 'POST',
