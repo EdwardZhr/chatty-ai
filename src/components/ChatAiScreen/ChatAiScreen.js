@@ -58,18 +58,18 @@ function ChatAiScreen() {
             <div className="chatAiScreen__box-recording">
                <div className="chatAiScreen__box-time">
                   <div className="chatAiScreen__btn-time">
-                     <img src={pause} />
+                     <img src={pause} alt=''/>
                   </div>
                   <p>0:13/2:48</p>
                </div>
 
-               <img className="chatAiScreen__recording-img" src={audioRut} />
+               <img className="chatAiScreen__recording-img" src={audioRut} alt=''/>
                <div className="chatAiScreen__box-send">
                   <div className="chatAiScreen__btn-attachment">
-                     <img src={attachment} />
+                     <img src={attachment} alt=''/>
                   </div>
                   <div className="chatAiScreen__btn-send">
-                     <img src={send} />
+                     <img src={send} alt=''/>
                   </div>
 
                </div>
@@ -77,7 +77,7 @@ function ChatAiScreen() {
 
             <p className="chatAiScreen__text">
                Все результаты генерируются искусственным интеллектом, если вы получите какие-либо неправильные ответы,
-               <a className="chatAiScreen__text-link" href="#" target="_blanck"> сообщите об этом здесь</a>
+               <a className="chatAiScreen__text-link" href="https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md" target="_blanck"> сообщите об этом здесь</a>
 
             </p>
          </div>
