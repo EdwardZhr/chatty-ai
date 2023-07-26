@@ -1,0 +1,19 @@
+import "./NavItem.css"
+import React from "react";
+
+function NavItem(props) {
+   return (
+      <>
+         <img className="sait-bar__nav-icon" src={props.icon} alt="" />
+         <div className={`sait-bar__nav-box ${props.isState && 'text-hiden'}`}>
+            <p className={`sait-bar__nav-text`}>{props.text}</p>
+            <img src={props.iconNum} />
+         </div>
+
+
+
+      </>
+   )
+}
+
+export default NavItem;
