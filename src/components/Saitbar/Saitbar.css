@@ -3,7 +3,7 @@
    flex-direction: column;
    background-color: #222222;
    padding: 16px 8px 16px 8px;
-   margin: 16px;
+   margin: 16px 0 16px 16px;
    border-radius: 8px;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .sait-bar__nav-link_modiff {
-   margin-bottom: 430px;
+   margin-bottom: 330px;
 }
 
 /* .sait-bar__nav-link:not(:last-child) {
