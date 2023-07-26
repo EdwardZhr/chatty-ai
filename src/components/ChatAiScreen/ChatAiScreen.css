@@ -1,0 +1,183 @@
+.chatAiScreen {
+   display: flex;
+   flex-direction: column;
+   font-family: 'Inter', sans-serif;
+   width: 100%;
+   margin: 24px 32px;
+}
+
+/* chatAiScreen__box */
+.chatAiScreen__box {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 20px;
+}
+
+/* chatAiScreen__tag */
+.chatAiScreen__tag {
+   display: flex;
+}
+
+.chatAiScreen__tag-text {
+   font-size: 20px;
+   font-weight: 600;
+   line-height: 32px;
+   letter-spacing: -0.4px;
+   margin-left: 16px;
+}
+
+/* chatAiScreen__history */
+.chatAiScreen__history {
+   display: flex;
+}
+
+.chatAiScreen__history-form {
+   border-radius: 12px;
+   border: 2px solid #272B30;
+   padding: 8px 16px;
+   display: flex;
+   align-items: center;
+}
+
+.chatAiScreen__history-label {
+   font-size: 14px;
+   font-weight: 600;
+   line-height: 24px;
+   letter-spacing: -0.14px;
+   color: #6F767E;
+   margin-right: 8px;
+}
+
+.chatAiScreen__history-list {
+   display: block;
+   font-size: 14px;
+   font-weight: 600;
+   color: #444;
+   line-height: 24px;
+   letter-spacing: -0.14px;
+   padding-right: 24px;
+   width: 100%;
+   max-width: 100%;
+   appearance: none;
+   background-color: transparent;
+   background-image: url(../../images/cheveron.svg);
+   background-repeat: no-repeat, repeat;
+   background-position: right top 50%;
+
+}
+
+.chatAiScreen__history-more {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   background-color: #272B30;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-left: 16px;
+}
+
+/* chatAiScreen__box-audio */
+.chatAiScreen__box-audio {}
+
+.chatAiScreen__box-text {
+   color: #FFF;
+   font-family: 'NTSomic', sans-serif;
+   font-size: 24px;
+   font-weight: 600;
+   line-height: 131%;
+   letter-spacing: -0.48px;
+}
+
+.chatAiScreen__box-param {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin: 22px 0 28px 0;
+}
+
+.chatAiScreen__list-param {
+   display: flex;
+}
+
+.chatAiScreen__list-item {
+   color: #FCFCFC;
+   font-size: 15px;
+   font-weight: 700;
+   line-height: 24px;
+   letter-spacing: -0.15px;
+   padding: 12px 20px;
+   border-radius: 12px;
+   border: 2px solid #272B30;
+   background: rgba(72, 52, 88, 0.58);
+}
+
+.chatAiScreen__list-item:not(:last-child) {
+   margin-right: 20px;
+}
+
+.chatAiScreen__box-btn {
+   background-color: transparent;
+}
+
+/* chatAiScreen__box-recording */
+.chatAiScreen__box-recording {
+   display: flex;
+   align-items: center;
+   border-radius: 20px;
+   border: 1px solid rgba(0, 0, 0, 0.20);
+   background: #0D0F10;
+   box-shadow: 0px 8px 10px -6px rgba(182, 240, 156, 0.04), 0px 25px 50px -12px rgba(182, 240, 156, 0.12), 0px 0px 0px 5px rgba(182, 240, 156, 0.12);
+   padding: 24px;
+}
+
+.chatAiScreen__box-time {
+   display: flex;
+}
+
+.chatAiScreen__btn-time {
+   margin-right: 10px;
+}
+
+.chatAiScreen__box-send {
+   display: flex;
+   align-items: center;
+}
+
+.chatAiScreen__recording-img {
+   width: 500px;
+   flex: auto;
+   margin: 0 60px 0 30px;
+}
+
+.chatAiScreen__btn-send {
+   margin-left: 24px;
+   width: 48px;
+   height: 48px;
+   border-radius: 12px;
+   background: #1A1D21;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.chatAiScreen__text {
+   color: #FFF;
+   font-family: 'NTSomic', sans-serif;
+   font-size: 12px;
+   font-weight: 600;
+   line-height: 131%;
+   letter-spacing: -0.24px;
+   margin-top: 20px;
+   text-align: center;
+}
+
+.chatAiScreen__text-link {
+   color: #AC6BFF;
+   font-family: 'NTSomic', sans-serif;
+   font-size: 12px;
+   font-weight: 600;
+   line-height: 131%;
+   letter-spacing: -0.24px;
+   text-decoration-line: underline;
+}

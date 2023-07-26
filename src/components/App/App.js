@@ -1,5 +1,10 @@
-import { useState, useRef, useEffect } from 'react';
 import './App.css';
+import { useState, useRef, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Saitbar from '../Saitbar/Saitbar';
+import MainScreen from '../MainScreen/MainScreen'
+import ChatAiScreen from '../ChatAiScreen/ChatAiScreen';
+
 
 function App() {
   const [state, setState] = useState('Initial');
@@ -11,11 +16,14 @@ function App() {
   const apiUrl = 'https://api.openai.com/v1/chat/completions';
   const testKey = process.env.REACT_APP_TEST_KEY;
   const apiKey = process.env.REACT_APP_APISECRET.split(',').reverse().join('');
+  // my code
+  // const testKey = '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'
+  // const apiKey = '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'
 
   useEffect(() => {
-    console.log(testKey)
+    //  console.log(testKey)
     const getUserMedia = async () => {
-      const stream = await  navigator.mediaDevices.getUserMedia({audio: true});
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const recorder = new MediaRecorder(stream);
 
       recorder.ondataavailable = (e) => {
@@ -23,10 +31,10 @@ function App() {
       }
 
       recorder.onstop = () => {
-        const audioBlob = new Blob(chunksRef.current, {'type': 'audio/wav'})
+        const audioBlob = new Blob(chunksRef.current, { 'type': 'audio/wav' })
         chunksRef.current = [];
         setAudioURL(window.URL.createObjectURL(audioBlob))
-        
+
         const audioFile = new File([audioBlob], 'audio.wav', { type: 'audio/wav' });
         const formData = new FormData();
         formData.append('file', audioFile);
@@ -37,31 +45,8 @@ function App() {
           headers: {
             'Authorization': `Bearer ${apiKey}`,
           },
-          body: formData 
+          body: formData
         })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Ошибка при отправке аудио на OpenAI API');
-          }
-          return response.json();
-        })
-        .then(result => {
-          fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-                Authorization: `Bearer ${apiKey}`,
-           },
-            body: JSON.stringify({
-              model: 'gpt-3.5-turbo', 
-              messages: [
-                 {
-                    role: 'user',
-                    content: result.text,
-                 },
-              ],
-           }),
-         })
           .then(response => {
             if (!response.ok) {
               throw new Error('Ошибка при отправке аудио на OpenAI API');
@@ -69,16 +54,39 @@ function App() {
             return response.json();
           })
           .then(result => {
-            setTranscription(result.choices[0].message.content);
+            fetch(apiUrl, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${apiKey}`,
+              },
+              body: JSON.stringify({
+                model: 'gpt-3.5-turbo',
+                messages: [
+                  {
+                    role: 'user',
+                    content: result.text,
+                  },
+                ],
+              }),
+            })
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error('Ошибка при отправке аудио на OpenAI API');
+                }
+                return response.json();
+              })
+              .then(result => {
+                setTranscription(result.choices[0].message.content);
+              })
           })
-        })
-        .catch(error => {
-          console.error('Ошибка при отправке аудио на OpenAI API:', error.message);
-          setTranscription('Произошла ошибка');
-        });
+          .catch(error => {
+            console.error('Ошибка при отправке аудио на OpenAI API:', error.message);
+            setTranscription('Произошла ошибка');
+          });
       }
 
-      setMediaRecorder(recorder);      
+      setMediaRecorder(recorder);
     }
     getUserMedia()
       .catch(error => console.log('Error accessing microphone:', error));
@@ -96,24 +104,46 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">
-          <div className="display">
-            {audioURL && <audio controls src={audioURL}>
-            </audio>}
-            {audioURL && <a href={audioURL} download='audio'>Скачать</a>}
-            <div>{transcription}</div>
-          </div>
-          
-          <div className="controllers">
-            {(state === 'Initial' && 
-              <button onClick={handleStartRecording}>Start</button>)
+      {/* <div className="container">
+        <div className="display">
+          {audioURL && <audio controls src={audioURL}>
+          </audio>}
+          {audioURL && <a href={audioURL} download='audio'>Скачать</a>}
+          <div>{transcription}</div>
+        </div>
+
+        <div className="controllers">
+          {(state === 'Initial' &&
+            <button onClick={handleStartRecording}>Start</button>)
             || (state === 'Record' &&
-            <button onClick={handleStopRecording}>Stop</button>)
-            }
+              <button onClick={handleStopRecording}>Stop</button>)
+          }
+        </div>
+        <div>Тест2</div>
+        <div>very good</div>
+      </div> */}
+      <Routes>
+
+        <Route path='/chatty-ai' element={
+          <div className='container'>
+            <Saitbar />
+            <MainScreen />
           </div>
-          <div>Тест2</div>
-      </div>
-    </div>
+        } />
+
+        <Route path='/chatty-recording' element={
+          <>
+            <div className='container'>
+              <Saitbar />
+              <ChatAiScreen />
+            </div>
+
+          </>
+        } />
+
+      </Routes>
+
+    </div >
   );
 }
 
