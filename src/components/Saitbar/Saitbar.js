@@ -19,33 +19,22 @@ import close from "../../images/close.svg"
 
 
 function Saitbar() {
-   // const a = document.querySelectorAll('.test')
-   // function handleToggleSaidBar() {
-   //    console.log('click')
-   //    a.forEach((i) => {
-   //       console.log('click', i)
-   //       i.classList.toggle('display-none')
-   //    })
-   // }
-   const saitBarText = document.querySelectorAll('.sait-bar__box-text')
    const [isState, setState] = useState(false)
+
    function handleHidenSaidBar() {
-
-      saitBarText.forEach((i) => {
-         console.log(i)
-         if (!i.classList.contains('text-hiden')) {
-            setState(true)
-         } else {
-            setState(false)
-         }
-      })
-
+      const saitBarText = document.querySelector('.sait-bar__box-text')
+      if (!saitBarText.classList.contains('text-hiden')) {
+         setState(true)
+      } else {
+         setState(false)
+      }
    }
+
    return (
       <div className="sait-bar">
 
          <div className="sait-bar__box">
-            <img className='sait-bar__nav-icon' src={logo} alt="логотип" />
+            <img className='sait-bar__nav-logo' src={logo} alt="логотип" />
             <div className={`sait-bar__box-text ${isState && 'text-hiden'}`} >
                <p className="sait-bar__text">Chatty AI</p>
                <p className="sait-bar__sub-text">Version 1.0</p>
@@ -83,7 +72,9 @@ function Saitbar() {
                <p className={`sait-bar__nav-footer_text ${isState && 'text-hiden'} `}>Скрыть</p>
             </button>
          </nav>
-      </div >
+      </div>
+
+
    )
 }
 

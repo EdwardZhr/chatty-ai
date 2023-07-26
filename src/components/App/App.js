@@ -81,7 +81,7 @@ function App() {
     //     </div>
     //     <div>Тест2</div>
     //   </div>
-    
+
     <div className="App">
       <Routes>
 
@@ -93,10 +93,10 @@ function App() {
         } />
 
         <Route path='/chatty-recording' element={
-            <div className='container'>
-              <Saitbar />
-              <ChatAiScreen />
-            </div>
+          <div className='container'>
+            <Saitbar />
+            <ChatAiScreen />
+          </div>
 
 
         } />

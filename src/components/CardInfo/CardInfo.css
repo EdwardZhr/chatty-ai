@@ -1,7 +1,23 @@
+.main-sreen_card {}
+
 .main-screen__text {
    color: #E5E5E5;
-   font-size: 16px;
-   font-style: normal;
-   font-weight: 500;
+   font-family: 'NTSomic', sans-serif;
+   font-size: 32px;
+   font-weight: 600;
    line-height: 150%;
+}
+
+.main-screen__subtext {
+   color: rgba(229, 229, 229, 0.60);
+   font-family: 'NTSomic', sans-serif;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 150%;
+}
+
+.main-sreen_img {
+   height: 80px;
+   margin-bottom: 25px;
 }
