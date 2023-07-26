@@ -12,6 +12,7 @@ function App() {
   const chunksRef = useRef([]);
   const [audioURL, setAudioURL] = useState(null)
   const [transcription, setTranscription] = useState('');
+  const [question, setQuestion] = useState('');
   const openAIEndpoint = 'https://api.openai.com/v1/audio/transcriptions';
   const apiUrl = 'https://api.openai.com/v1/chat/completions';
   // const testKey = process.env.REACT_APP_TEST_KEY;
@@ -39,6 +40,7 @@ function App() {
         const formData = new FormData();
         formData.append('file', audioFile);
         formData.append('model', 'whisper-1');
+        formData.append('language', 'ru')
 
         fetch(openAIEndpoint, {
           method: 'POST',
