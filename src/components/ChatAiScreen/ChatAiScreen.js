@@ -15,21 +15,28 @@ function ChatAiScreen() {
       <div className="chatAiScreen">
          <div className="chatAiScreen__box">
 
-            <div>
-               <img src={tag} alt="тег" />
-               <p>Чат AI</p>
+            <div className="chatAiScreen__tag">
+               <div>
+                  <img src={tag} alt="тег" />
+               </div>
+               <p className="chatAiScreen__tag-text">Чат AI</p>
             </div>
 
-            <div>
-               <form>
-                  <label>Последняя запись</label>
-                  <select id="select">
+            <div className="chatAiScreen__history">
+               <form className="chatAiScreen__history-form">
+                  <select className="chatAiScreen__history-list">
                      <option>
-
+                        Последняя запись
+                     </option>
+                     <option>
+                        Следущая запись
                      </option>
                   </select>
                </form>
-               <img src={points} alt="точки" />
+               <div className="chatAiScreen__history-more">
+                  <img src={points} alt="точки" />
+               </div>
+
             </div>
 
          </div >
@@ -37,35 +44,40 @@ function ChatAiScreen() {
          <CardChatAi />
 
          <div className="chatAiScreen__box-audio">
-            <p>Категории</p>
+            <p className="chatAiScreen__box-text">Категории</p>
             <div className="chatAiScreen__box-param">
-               <div className="chatAiScreen__list-param">
-                  <p>Очистить от слов-паразитов</p>
-                  <p>Структурировать текст</p>
-                  <p>Структурировать текст</p>
-                  <p>Структурировать текст</p>
-                  <p>Структурировать текст</p>
-                  <p>Структурировать текст</p>
-               </div>
-               <button><img src={btnDelete} alt="кнопка удалить" /></button>
+               <ul className="chatAiScreen__list-param">
+                  <li className="chatAiScreen__list-item">Очистить от слов-паразитов</li>
+                  <li className="chatAiScreen__list-item">Структурировать текст</li>
+                  <li className="chatAiScreen__list-item">Структурировать текст</li>
+                  <li className="chatAiScreen__list-item">Структурировать текст</li>
+               </ul>
+               <button className="chatAiScreen__box-btn" ><img src={btnDelete} alt="кнопка удалить" /></button>
             </div>
 
             <div className="chatAiScreen__box-recording">
                <div className="chatAiScreen__box-time">
-                  <img src={pause} />
+                  <div className="chatAiScreen__btn-time">
+                     <img src={pause} />
+                  </div>
                   <p>0:13/2:48</p>
                </div>
 
                <img className="chatAiScreen__recording-img" src={audioRut} />
                <div className="chatAiScreen__box-send">
-                  <img src={attachment} />
-                  <img src={send} />
+                  <div className="chatAiScreen__btn-attachment">
+                     <img src={attachment} />
+                  </div>
+                  <div className="chatAiScreen__btn-send">
+                     <img src={send} />
+                  </div>
+
                </div>
             </div>
 
-            <p>
+            <p className="chatAiScreen__text">
                Все результаты генерируются искусственным интеллектом, если вы получите какие-либо неправильные ответы,
-               <a href="#" target="_blanck"> сообщите об этом здесь</a>
+               <a className="chatAiScreen__text-link" href="#" target="_blanck"> сообщите об этом здесь</a>
 
             </p>
          </div>

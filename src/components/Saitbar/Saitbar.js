@@ -4,16 +4,16 @@ import { NavLink } from 'react-router-dom';
 import NavItem from "../NavItem/NavItem"
 import logo from '../../images/avatar.svg'
 import comment from "../../images/comment.svg"
-import presentation from "../../images/presentation.svg"
+// import presentation from "../../images/presentation.svg"
 import chat from "../../images/chat-conversation.svg"
 import file from "../../images/file.svg"
-import pravki from "../../images/pravki.svg"
-import time from "../../images/time.svg"
+//import pravki from "../../images/pravki.svg"
+//import time from "../../images/time.svg"
 import statia from "../../images/statia.svg"
 import notification from "../../images/notification.svg"
 import setting from "../../images/setting.svg"
 import close from "../../images/close.svg"
-import number from "../../images/number.svg"
+// import number from "../../images/number.svg"
 
 
 
@@ -55,32 +55,19 @@ function Saitbar() {
          <nav className="sait-bar__nav">
 
             <NavLink to="/chatty-ai" className={({ isActive }) => `sait-bar__nav-link ${isActive ? "sait-bar__nav-link_active" : ""}`}>
-               <NavItem icon={comment} text={"Главная"} isState={isState} />
+               <NavItem icon={comment} text={"Чат"} isState={isState} />
             </NavLink>
 
             <NavLink to="#" className={({ isActive }) => `sait-bar__nav-link`} >
-               <NavItem icon={presentation} text={"Презентация из слайдов"} isState={isState} />
+               <NavItem icon={chat} text={"Архив"} isState={isState} />
             </NavLink>
 
             <NavLink to="#" className={({ isActive }) => `sait-bar__nav-link`} >
-               <NavItem icon={chat} text={"Интервью по продукту"} isState={isState} />
-            </NavLink>
-
-            <NavLink to="#" className={({ isActive }) => `sait-bar__nav-link`} >
-               <NavItem icon={file} text={"Структура презентации"} isState={isState} />
-            </NavLink>
-
-            <NavLink to="#" className={({ isActive }) => `sait-bar__nav-link`} >
-               <NavItem icon={pravki} iconNum={number} text={"Правки от AI"} isState={isState} />
-               {/* <img className='display-none' src={number} alt="иконка с числами" /> */}
-            </NavLink>
-
-            <NavLink to="#" className={({ isActive }) => `sait-bar__nav-link`} >
-               <NavItem icon={time} text={"Сокращение выступления"} isState={isState} />
+               <NavItem icon={file} text={"Мои выступления"} isState={isState} />
             </NavLink>
 
             <NavLink to="#" className={({ isActive }) => `sait-bar__nav-link sait-bar__nav-link_modiff`} >
-               <NavItem icon={statia} text={"Статья про AI"} isState={isState} />
+               <NavItem icon={statia} text={"О Chatty AI"} isState={isState} />
             </NavLink>
          </nav>
 

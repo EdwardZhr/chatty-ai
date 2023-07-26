@@ -37,7 +37,7 @@
 
 /* OpenSans */
 
-@font-face {
+/* @font-face {
    font-family: 'OpenSans';
    font-style: normal;
    font-weight: 400;
@@ -62,11 +62,11 @@
    font-display: swap;
    src: url("./OpenSans/OpenSans-Bold.woff") format("woff"),
       url("./OpenSans/OpenSans-Bold.woff2") format("woff2");
-}
+} */
 
 /* Ubuntu */
 
-@font-face {
+/* @font-face {
    font-family: 'Ubuntu';
    font-style: normal;
    font-weight: 400;
@@ -91,11 +91,11 @@
    font-display: swap;
    src: url("./Ubuntu/Ubuntu-Bold.woff") format("woff"),
       url("./Ubuntu/Ubuntu-Bold.woff2") format("woff2");
-}
+} */
 
 /* Raleway */
 
-@font-face {
+/* @font-face {
    font-family: 'Raleway';
    font-style: normal;
    font-weight: 500;
@@ -120,7 +120,7 @@
    font-display: swap;
    src: url("./Raleway/Raleway-ExtraBold.woff") format("woff"),
       url("./Raleway/Raleway-ExtraBold.woff2") format("woff2");
-}
+} */
 
 /* NtSomic */
 

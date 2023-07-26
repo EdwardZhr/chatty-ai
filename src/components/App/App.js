@@ -81,6 +81,8 @@ function App() {
     //     </div>
     //     <div>Тест2</div>
     //   </div>
+    
+    <div className="App">
       <Routes>
 
         <Route path='/chatty-ai' element={
@@ -95,6 +97,8 @@ function App() {
               <Saitbar />
               <ChatAiScreen />
             </div>
+
+
         } />
 
       </Routes>
