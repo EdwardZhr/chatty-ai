@@ -1,15 +1,38 @@
 {
   "files": {
-    "main.css": "/chatty-ai/static/css/main.073c9b0a.css",
-    "main.js": "/chatty-ai/static/js/main.a6b6a632.js",
+    "main.css": "/chatty-ai/static/css/main.d3618995.css",
+    "main.js": "/chatty-ai/static/js/main.d888efad.js",
     "static/js/787.7ffbbae1.chunk.js": "/chatty-ai/static/js/787.7ffbbae1.chunk.js",
+    "static/media/img-random.svg": "/chatty-ai/static/media/img-random.226dff1af365a8fb6ae381495af03d59.svg",
+    "static/media/logo.png": "/chatty-ai/static/media/logo.d508dd0381e8c92311c8.png",
+    "static/media/audio-rut.svg": "/chatty-ai/static/media/audio-rut.8519d954c70be3b2db049b67133feda3.svg",
+    "static/media/tool-magic.svg": "/chatty-ai/static/media/tool-magic.28a3af52d30d7a4df1f34027845fade8.svg",
+    "static/media/time-clock.svg": "/chatty-ai/static/media/time-clock.a3447152c09e0d6e93ee03a5dbce5868.svg",
+    "static/media/text-action.svg": "/chatty-ai/static/media/text-action.1b88a0848207c539e7dbae9cf9ae2cbf.svg",
+    "static/media/microphone.svg": "/chatty-ai/static/media/microphone.6be7b7fc51235c21cae5f329a4dfd2f7.svg",
+    "static/media/comment.svg": "/chatty-ai/static/media/comment.85f2c5cb17341849c10dc28e018bf2c1.svg",
+    "static/media/chat-conversation.svg": "/chatty-ai/static/media/chat-conversation.e87164cd79e04faefc586e61b4a44217.svg",
+    "static/media/statia.svg": "/chatty-ai/static/media/statia.bef574ee20a53c14afde959d4ef99d25.svg",
+    "static/media/avatarColor.svg": "/chatty-ai/static/media/avatarColor.c67db1785e99e0a11ba525d448d5b533.svg",
+    "static/media/avatar.svg": "/chatty-ai/static/media/avatar.daeab6e2bad10d19d6506649db4dfe01.svg",
+    "static/media/file.svg": "/chatty-ai/static/media/file.9a6df00f0656c9e596e914e4deb0ea0a.svg",
     "index.html": "/chatty-ai/index.html",
-    "main.073c9b0a.css.map": "/chatty-ai/static/css/main.073c9b0a.css.map",
-    "main.a6b6a632.js.map": "/chatty-ai/static/js/main.a6b6a632.js.map",
+    "static/media/btn-delete.svg": "/chatty-ai/static/media/btn-delete.385a0676db54dbabb3a71dbc079f1923.svg",
+    "static/media/attachment.svg": "/chatty-ai/static/media/attachment.8e1b1d37f6a4f2349cf25c0d37f97555.svg",
+    "static/media/points.svg": "/chatty-ai/static/media/points.861d5956586b053002ea2c753b86e28c.svg",
+    "static/media/setting.svg": "/chatty-ai/static/media/setting.90cdabc075d9e8fc0df1be84a9d4132e.svg",
+    "static/media/send.svg": "/chatty-ai/static/media/send.11614da7a1df35d6f0a4e457bda96e48.svg",
+    "static/media/notification.svg": "/chatty-ai/static/media/notification.b24081f010af5c529b16093d85f19ae0.svg",
+    "static/media/close.svg": "/chatty-ai/static/media/close.9cf751a861401a618329026aeba1c7a9.svg",
+    "static/media/pause.svg": "/chatty-ai/static/media/pause.a74e2cb0cd3d28fbe706bb8ccf1deb90.svg",
+    "static/media/cheveron.svg": "/chatty-ai/static/media/cheveron.9d1cf7dc682ef65cc76c.svg",
+    "static/media/tag.svg": "/chatty-ai/static/media/tag.a599a4fa1861008634472959a71aeb67.svg",
+    "main.d3618995.css.map": "/chatty-ai/static/css/main.d3618995.css.map",
+    "main.d888efad.js.map": "/chatty-ai/static/js/main.d888efad.js.map",
     "787.7ffbbae1.chunk.js.map": "/chatty-ai/static/js/787.7ffbbae1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.a6b6a632.js"
+    "static/css/main.d3618995.css",
+    "static/js/main.d888efad.js"
   ]
 }
