@@ -14,8 +14,8 @@ function App() {
   const [transcription, setTranscription] = useState('');
   const openAIEndpoint = 'https://api.openai.com/v1/audio/transcriptions';
   const apiUrl = 'https://api.openai.com/v1/chat/completions';
-  // const testKey = process.env.REACT_APP_TEST_KEY;
-  // const apiKey = process.env.REACT_APP_APISECRET.split(',').reverse().join('');
+  const testKey = process.env.REACT_APP_TEST_KEY;
+  const apiKey = process.env.REACT_APP_APISECRET.split(',').reverse().join('');
   // my code
   // const testKey = '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'
   // const apiKey = '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'
@@ -137,8 +137,6 @@ function App() {
               <Saitbar />
               <ChatAiScreen />
             </div>
-
-
 
           </>
         } />
