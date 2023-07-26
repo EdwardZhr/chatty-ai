@@ -17,8 +17,8 @@ function App() {
   // const testKey = process.env.REACT_APP_TEST_KEY;
   // const apiKey = process.env.REACT_APP_APISECRET.split(',').reverse().join('');
   // my code
-  const testKey = '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'
-  const apiKey = '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'
+  // const testKey = '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'
+  // const apiKey = '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'
 
   useEffect(() => {
     //  console.log(testKey)
