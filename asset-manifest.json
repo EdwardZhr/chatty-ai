@@ -1,14 +1,13 @@
 {
   "files": {
-    "main.css": "/chatty-ai/static/css/main.d3618995.css",
-    "main.js": "/chatty-ai/static/js/main.d888efad.js",
+    "main.css": "/chatty-ai/static/css/main.442c5233.css",
+    "main.js": "/chatty-ai/static/js/main.34df86ad.js",
     "static/js/787.7ffbbae1.chunk.js": "/chatty-ai/static/js/787.7ffbbae1.chunk.js",
     "static/media/img-random.svg": "/chatty-ai/static/media/img-random.226dff1af365a8fb6ae381495af03d59.svg",
     "static/media/logo.png": "/chatty-ai/static/media/logo.d508dd0381e8c92311c8.png",
     "static/media/audio-rut.svg": "/chatty-ai/static/media/audio-rut.8519d954c70be3b2db049b67133feda3.svg",
-    "static/media/tool-magic.svg": "/chatty-ai/static/media/tool-magic.28a3af52d30d7a4df1f34027845fade8.svg",
-    "static/media/time-clock.svg": "/chatty-ai/static/media/time-clock.a3447152c09e0d6e93ee03a5dbce5868.svg",
-    "static/media/text-action.svg": "/chatty-ai/static/media/text-action.1b88a0848207c539e7dbae9cf9ae2cbf.svg",
+    "static/media/tool-magic.png": "/chatty-ai/static/media/tool-magic.f4fa159fe4c965d65348.png",
+    "static/media/text-action.png": "/chatty-ai/static/media/text-action.4b3766043b64216b0ea7.png",
     "static/media/microphone.svg": "/chatty-ai/static/media/microphone.6be7b7fc51235c21cae5f329a4dfd2f7.svg",
     "static/media/comment.svg": "/chatty-ai/static/media/comment.85f2c5cb17341849c10dc28e018bf2c1.svg",
     "static/media/chat-conversation.svg": "/chatty-ai/static/media/chat-conversation.e87164cd79e04faefc586e61b4a44217.svg",
@@ -27,12 +26,12 @@
     "static/media/pause.svg": "/chatty-ai/static/media/pause.a74e2cb0cd3d28fbe706bb8ccf1deb90.svg",
     "static/media/cheveron.svg": "/chatty-ai/static/media/cheveron.9d1cf7dc682ef65cc76c.svg",
     "static/media/tag.svg": "/chatty-ai/static/media/tag.a599a4fa1861008634472959a71aeb67.svg",
-    "main.d3618995.css.map": "/chatty-ai/static/css/main.d3618995.css.map",
-    "main.d888efad.js.map": "/chatty-ai/static/js/main.d888efad.js.map",
+    "main.442c5233.css.map": "/chatty-ai/static/css/main.442c5233.css.map",
+    "main.34df86ad.js.map": "/chatty-ai/static/js/main.34df86ad.js.map",
     "787.7ffbbae1.chunk.js.map": "/chatty-ai/static/js/787.7ffbbae1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3618995.css",
-    "static/js/main.d888efad.js"
+    "static/css/main.442c5233.css",
+    "static/js/main.34df86ad.js"
   ]
 }
