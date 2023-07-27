@@ -92,7 +92,7 @@ function App() {
           </div>
         } />
 
-        <Route path='/chatty-recording' element={
+        <Route path='/recording' element={
           <div className='container'>
             <Saitbar />
             <ChatAiScreen />
