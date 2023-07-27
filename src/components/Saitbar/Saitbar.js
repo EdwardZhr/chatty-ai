@@ -43,7 +43,7 @@ function Saitbar() {
 
          <nav className="sait-bar__nav">
 
-            <NavLink to="/chatty-ai" className={({ isActive }) => `sait-bar__nav-link ${isActive ? "sait-bar__nav-link_active" : ""}`}>
+            <NavLink to="/recording" className={({ isActive }) => `sait-bar__nav-link ${isActive ? "sait-bar__nav-link_active" : ""}`}>
                <NavItem icon={comment} text={"Чат"} isState={isState} />
             </NavLink>
 
