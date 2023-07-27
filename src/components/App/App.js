@@ -85,8 +85,9 @@ function App() {
     <div className="App">
       <Routes>
 
-        <Route path='/chatty-ai' element={
+        <Route path='/' element={
           <div className='container'>
+            <a href="https://edwardzhr.github.io/chatty-ai/recording">About</a>
             <Saitbar />
             <MainScreen />
           </div>
