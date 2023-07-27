@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/chatty-ai/static/css/main.442c5233.css",
-    "main.js": "/chatty-ai/static/js/main.e7ea12aa.js",
+    "main.js": "/chatty-ai/static/js/main.e4199e3c.js",
     "static/js/787.7ffbbae1.chunk.js": "/chatty-ai/static/js/787.7ffbbae1.chunk.js",
     "static/media/img-random.svg": "/chatty-ai/static/media/img-random.226dff1af365a8fb6ae381495af03d59.svg",
     "static/media/logo.png": "/chatty-ai/static/media/logo.d508dd0381e8c92311c8.png",
@@ -27,11 +27,11 @@
     "static/media/cheveron.svg": "/chatty-ai/static/media/cheveron.9d1cf7dc682ef65cc76c.svg",
     "static/media/tag.svg": "/chatty-ai/static/media/tag.a599a4fa1861008634472959a71aeb67.svg",
     "main.442c5233.css.map": "/chatty-ai/static/css/main.442c5233.css.map",
-    "main.e7ea12aa.js.map": "/chatty-ai/static/js/main.e7ea12aa.js.map",
+    "main.e4199e3c.js.map": "/chatty-ai/static/js/main.e4199e3c.js.map",
     "787.7ffbbae1.chunk.js.map": "/chatty-ai/static/js/787.7ffbbae1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.442c5233.css",
-    "static/js/main.e7ea12aa.js"
+    "static/js/main.e4199e3c.js"
   ]
 }
