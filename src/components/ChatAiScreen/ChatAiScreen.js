@@ -2,9 +2,9 @@ import "./ChatAiScreen.css"
 import React from "react";
 import CardChatAi from "../CardChatAi/CardChatAi";
 import CardAudio from "../CardAudio/CardAudio";
-import tag from "../../images/tag.svg"
-import points from "../../images/points.svg"
-import btnDelete from "../../images/btn-delete.svg"
+// import tag from "../../images/tag.svg"
+// import points from "../../images/points.svg"
+// import btnDelete from "../../images/btn-delete.svg"
 import pause from "../../images/pause.svg"
 import audioRut from "../../images/audio-rut.svg"
 import attachment from "../../images/attachment.svg"
