@@ -25,7 +25,7 @@
    font-size: 13px;
    font-weight: 500;
    line-height: 15.73px;
-   transition: all 0.1s; ;
+   transition: all 0.2s ease;
    visibility: visible;
    opacity: 1;
    color: #A2A2A2;

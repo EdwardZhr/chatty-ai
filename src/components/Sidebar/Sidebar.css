@@ -20,7 +20,7 @@
 
 .sidebar__text-wrapper {
    margin-left: 13px;
-   transition: all 0.1s; 
+   transition: all 0.2s ease; 
    visibility: visible;
    opacity: 1;
    color: #FFF;
@@ -60,6 +60,11 @@
    flex: 1 1 auto;
 }
 
+.sidebar__footer {
+   border-top: 1px solid #383838;
+   padding-top: 19px;
+}
+
 .sidebar__btn {
    display: flex;
    align-items: center;
@@ -75,11 +80,12 @@
 }
 
 .sidebar__btn-text {
-   margin-left: 12px;
+   margin-left: 7px;
+   white-space: nowrap;
    font-size: 13px;
    font-weight: 500;
-   line-height: 121%;
-   transition: all 0.1s; 
+   line-height: 15.73px;
+   transition: all 0.2s ease; 
    visibility: visible;
    opacity: 1;
    color: #A2A2A2;

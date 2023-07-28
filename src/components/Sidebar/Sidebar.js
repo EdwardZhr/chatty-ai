@@ -29,7 +29,7 @@ function Sidebar() {
          <nav className='sidebar__footer'>
             <button onClick={handleCollapseSidebar} className='sidebar__btn' type='button'>
                <div className='sidebar__btn-icon'/>
-               <p className={`${isСollapsed ? 'sidebar__btn-text sidebar__btn-text_hidden' : 'sidebar__btn-text'}`}>Скрыть</p>
+               <p className={`${isСollapsed ? 'sidebar__btn-text sidebar__btn-text_hidden' : 'sidebar__btn-text'}`}>Скрыть меню</p>
             </button>
          </nav>
       </div>
