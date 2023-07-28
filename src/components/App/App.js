@@ -2,7 +2,7 @@ import './App.css';
 // import { useState, useRef, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 // import * as openAiApi from '../../utils/OpenAIApi'
-import Saitbar from '../Saitbar/Saitbar';
+import Sidebar from '../Sidebar/Sidebar';
 import MainScreen from '../MainScreen/MainScreen'
 import ChatAiScreen from '../ChatAiScreen/ChatAiScreen';
 
@@ -82,28 +82,12 @@ function App() {
     //     <div>Тест2</div>
     //   </div>
 
-    <div className="App">
+    <div className='App'>
+      <Sidebar />
       <Routes>
-
-        <Route path='/' element={
-          <div className='container'>
-            <a href="https://edwardzhr.github.io/chatty-ai/recording">About</a>
-            <Saitbar />
-            <MainScreen />
-          </div>
-        } />
-
-        <Route path='/recording' element={
-          <div className='container'>
-            <Saitbar />
-            <ChatAiScreen />
-          </div>
-
-
-        } />
-
+        <Route path="/" element={<MainScreen />} />
+        <Route path="/recording" element={<ChatAiScreen />} />
       </Routes>
-
     </div >
   );
 }

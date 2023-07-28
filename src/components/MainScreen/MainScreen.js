@@ -1,7 +1,7 @@
 import "./MainScreen.css"
 import React from "react";
 import CardInfo from "../CardInfo/CardInfo";
-import logo from "../../images/logo.png"
+import logo from "../../images/logo1.png"
 import microphone from "../../images/microphone.svg"
 
 import toolMagic from "../../images/tool-magic.png"

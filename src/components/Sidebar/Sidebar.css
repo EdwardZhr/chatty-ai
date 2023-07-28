@@ -1,80 +1,87 @@
-.sait-bar {
+.sidebar {
    display: flex;
    flex-direction: column;
    flex: 1 1 auto;
-   background-color: #222;
-   padding: 16px 8px 16px 8px;
    box-sizing: border-box;
+   width: 160px;
+   padding: 16px 10px;
    border-radius: 8px;
-   min-height: 100%;
+   background-color: #222;
+   transition: all 0.3s; 
 }
 
-.sait-bar__box {
+.sidebar_cropped {
+   width: 56px;
+}
+
+.sidebar__header {
    display: flex;
-   padding: 0 8px;
 }
 
-.sait-bar__box-text {
+.sidebar__text-wrapper {
    margin-left: 13px;
+   transition: all 0.5s; 
    color: #FFF;
    font-family: 'NT-Somic', sans-serif;
 }
 
-.sait-bar__text {
+.sidebar__text-wrapper_hidden {
+   display: none;
+}
+
+.sidebar__logo {
+   width: 32px;
+   height: 32px;
+   background: url('../../images/logo.svg') center no-repeat;
+}
+
+.sidebar__text {
    font-size: 16px;
-   font-weight: 800;
+   font-weight: 700;
    line-height: 100%;
    letter-spacing: -0.32px;
    margin-bottom: 4px;
+   white-space: nowrap;
 }
 
-.sait-bar__sub-text {
+.sidebar__sub-text {
    font-size: 12px;
    font-weight: 400;
    line-height: 100%;
    letter-spacing: -0.24px;
+   white-space: nowrap
 }
 
-/* nav */
-.sait-bar__nav {
+.sidebar__nav {
    margin-top: 24px;
    flex: 1 1 auto;
 }
 
-.sait-bar__nav-link {
+.sidebar__nav-link {
    display: flex;
    align-items: center;
    height: 40px;
-   padding: 0 8px 0 8px;
+   padding: 0 6px;
 
 }
 
-/* .sait-bar__nav-link_modiff {
-   margin-bottom: 330px;
-} */
-
-/* .sait-bar__nav-link:not(:last-child) {
-   margin-bottom: 8px;
-} */
-
-.sait-bar__nav-link_active {
+.sidebar__nav-link_active {
    background-color: #483458;
    border-radius: 8px;
 }
 
-.sait-bar__nav-link_active .sait-bar__nav__text {
+.sidebar__nav-link_active .sidebar__nav__text {
    color: #fff;
 }
 
-/* nav footer */
-.sait-bar__nav-footer_btn {
+.sidebar__nav-footer_btn {
    background-color: transparent;
-   padding: 0 8px 0 8px;
+   padding: 0 6px;
    display: flex;
    align-items: center;
 }
 
-.sait-bar__nav-footer_text {
+.sidebar__nav-footer_text {
    color: #A2A2A2;
    font-family: 'Inter', sans-serif;
    font-size: 13px;
