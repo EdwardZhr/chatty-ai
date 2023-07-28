@@ -21,6 +21,8 @@ const CardAudio = ({ url }) => {
    const [isPlaying, setIsPlaying] = useState(false);
 
    useEffect(() => {
+
+      console.log(audioContext)
       // Создаем аудиоконтекст
       const context = new (window.AudioContext || window.webkitAudioContext)();
       setAudioContext(context);
@@ -66,7 +68,7 @@ const CardAudio = ({ url }) => {
       <div className="chatAi-audio" >
          <button className="chatAi-audio__play" onClick={playAudio}></button>
          {/* <button onClick={stopAudio}>Stop</button> */}
-         <img src={playRut} />
+         <img src={playRut} alt={'s'}/>
       </div>
    );
 };
