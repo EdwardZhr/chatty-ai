@@ -1,7 +1,7 @@
 import './App.css';
-// import { useState, useRef, useEffect } from 'react';
+//import { useState, useRef, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-// import * as openAiApi from '../../utils/OpenAIApi'
+//import * as openAiApi from '../../utils/OpenAIApi'
 import Sidebar from '../Sidebar/Sidebar';
 import MainScreen from '../MainScreen/MainScreen'
 import ChatAiScreen from '../ChatAiScreen/ChatAiScreen';
@@ -40,7 +40,7 @@ function App() {
   //         setTranscription(transcription)
   //         const aiResponse = await openAiApi.sendText(transcription);
   //         setAiResponse(aiResponse)
-  //       } catch(error) {
+  //       } catch (error) {
   //         console.log(error.message)
   //       }
   //     }
@@ -62,25 +62,25 @@ function App() {
   // };
 
   return (
-    // <div className="App">
-    //   <div className="container">
-    //     <div className="display">
-    //       {audioURL && <audio controls src={audioURL}>
-    //       </audio>}
-    //       {audioURL && <a href={audioURL} download='audio'>Скачать</a>}
-    //       <div>Вопрос: {transcription}</div>
-    //       <div>Ответ: {aiResponse}</div>
-    //     </div>
 
-    //     <div className="controllers">
-    //       {(state === 'Initial' &&
-    //         <button onClick={handleStartRecording}>Start</button>)
-    //         || (state === 'Record' &&
-    //           <button onClick={handleStopRecording}>Stop</button>)
-    //       }
-    //     </div>
-    //     <div>Тест2</div>
+    // <div className="container">
+    //   <div className="display">
+    //     {audioURL && <audio controls src={audioURL}>
+    //     </audio>}
+    //     {audioURL && <a href={audioURL} download='audio'>Скачать</a>}
+    //     <div>Вопрос: {transcription}</div>
+    //     <div>Ответ: {aiResponse}</div>
     //   </div>
+
+    //   <div className="controllers">
+    //     {(state === 'Initial' &&
+    //       <button onClick={handleStartRecording}>Start</button>)
+    //       || (state === 'Record' &&
+    //         <button onClick={handleStopRecording}>Stop</button>)
+    //     }
+    //   </div>
+    //   <div>Тест2</div>
+    // </div>
 
     <div className='App'>
       <Sidebar />
