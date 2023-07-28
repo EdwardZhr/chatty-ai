@@ -1,5 +1,6 @@
 .chatAi-card {
-   flex: auto;
+   width: 100%;
+   max-width: 70%;
 }
 
 .chatAi-card__container-main {
@@ -16,10 +17,12 @@
 
 .chatAi-card__box {
    display: flex;
+   width: 100%;
 }
 
 .chatAi-card__box-img {
-   width: 48px;
+   width: 100%;
+   max-width: 48px;
    height: 48px;
    border-radius: 50%;
    background-color: #CABDFF;
@@ -27,6 +30,10 @@
    align-items: center;
    justify-content: center;
    margin-right: 10px;
+}
+
+.chatAi-card__box-respons {
+   flex-basis: 100%;
 }
 
 .chatAi-card__box-text {
@@ -93,7 +100,6 @@
 
 .chatAi-card__cath-text {
    width: 100%;
-   max-width: 70%;
    max-height: 200px;
    overflow: auto;
    color: #EFEFEF;
