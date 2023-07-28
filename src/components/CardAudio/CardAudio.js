@@ -20,9 +20,9 @@ const CardAudio = ({ url }) => {
    const [audioSource, setAudioSource] = useState(null);
    const [isPlaying, setIsPlaying] = useState(false);
 
-   useEffect(() => {
 
-      console.log(audioContext)
+   console.log(audioContext)
+   useEffect(() => {
       // Создаем аудиоконтекст
       const context = new (window.AudioContext || window.webkitAudioContext)();
       setAudioContext(context);
