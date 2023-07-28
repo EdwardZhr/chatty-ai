@@ -1,26 +1,38 @@
-.sait-bar__nav-icon {
+.nav-item {
+   display: flex;
+   align-items: center;
+   height: 40px;
+   padding: 0 6px;
+}
+
+.nav-item_active {
+   border-radius: 8px;
+   background-color: #483458;
+}
+
+.nav-item__icon {
    max-width: 100%;
    height: 24px;
-   width: 24px;
-
+   min-width: 24px;
 }
 
-.sait-bar__nav-box {
-   display: flex;
+.nav-item__icon_chat {
+   background: url('../../images/chat.svg') center no-repeat;
 }
 
-.sait-bar__nav-text {
-   font-family: 'Inter', sans-serif;
-   color: #A2A2A2;
-   font-size: 13px;
-   font-style: normal;
-   font-weight: 500;
-   line-height: 121%;
+.nav-item__text {
    margin-left: 12px;
-   flex: auto;
-   width: 157px;
+   font-size: 13px;
+   font-weight: 500;
+   line-height: 15.73px;
+   transition: all 0.1s; ;
+   visibility: visible;
+   opacity: 1;
+   color: #A2A2A2;
+   font-family: 'Inter', sans-serif;
 }
 
-.text-hiden {
-   display: none;
+.nav-item__text_hidden {
+   visibility: hidden;
+   opacity: 0;
 }

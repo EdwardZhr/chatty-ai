@@ -1,21 +1,13 @@
 import "./NavItem.css"
 import React from "react";
+import { NavLink } from 'react-router-dom';
 
-function NavItem(props) {
+function NavItem({text, icon, isСollapsed}) {
    return (
-      <>
-
-         <img className="sait-bar__nav-icon" src={props.icon} alt="" />
-
-
-         <div className={`sait-bar__nav-box ${props.isCropped && 'text-hiden'}`}>
-            <p className={`sait-bar__nav-text`}>{props.text}</p>
-            {/* <img className="sait-bar__nav-img" src={props.iconNum} alt='' /> */}
-         </div>
-
-
-
-      </>
+      <NavLink to="/recording" className={({ isActive }) => `${isActive ? 'nav-item nav-item_active' : 'nav-item'}`}>
+         <div className={`nav-item__icon nav-item__icon_${icon}`}/>
+         <p className={`${isСollapsed ? 'nav-item__text nav-item__text_hidden' : 'nav-item__text'}`}>{text}</p>
+      </NavLink>
    )
 }
 

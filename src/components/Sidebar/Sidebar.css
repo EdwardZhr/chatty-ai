@@ -4,13 +4,13 @@
    flex: 1 1 auto;
    box-sizing: border-box;
    width: 160px;
-   padding: 16px 10px;
+   padding: 16px 10px 24px;
    border-radius: 8px;
-   background-color: #222;
    transition: all 0.3s; 
+   background-color: #222;
 }
 
-.sidebar_cropped {
+.sidebar_collapsed {
    width: 56px;
 }
 
@@ -20,36 +20,39 @@
 
 .sidebar__text-wrapper {
    margin-left: 13px;
-   transition: all 0.5s; 
+   transition: all 0.1s; 
+   visibility: visible;
+   opacity: 1;
    color: #FFF;
    font-family: 'NT-Somic', sans-serif;
 }
 
 .sidebar__text-wrapper_hidden {
-   display: none;
+   visibility: hidden;
+   opacity: 0;
 }
 
 .sidebar__logo {
-   width: 32px;
+   min-width: 32px;
    height: 32px;
    background: url('../../images/logo.svg') center no-repeat;
 }
 
 .sidebar__text {
+   margin-bottom: 4px;
+   white-space: nowrap;
    font-size: 16px;
    font-weight: 700;
    line-height: 100%;
    letter-spacing: -0.32px;
-   margin-bottom: 4px;
-   white-space: nowrap;
 }
 
 .sidebar__sub-text {
+   white-space: nowrap;
    font-size: 12px;
    font-weight: 400;
    line-height: 100%;
    letter-spacing: -0.24px;
-   white-space: nowrap
 }
 
 .sidebar__nav {
@@ -57,35 +60,33 @@
    flex: 1 1 auto;
 }
 
-.sidebar__nav-link {
+.sidebar__btn {
    display: flex;
    align-items: center;
-   height: 40px;
-   padding: 0 6px;
-
-}
-
-.sidebar__nav-link_active {
-   background-color: #483458;
-   border-radius: 8px;
-}
-
-.sidebar__nav-link_active .sidebar__nav__text {
-   color: #fff;
-}
-
-.sidebar__nav-footer_btn {
+   padding: 0 8px;
    background-color: transparent;
-   padding: 0 6px;
-   display: flex;
-   align-items: center;
+   outline: none;
 }
 
-.sidebar__nav-footer_text {
-   color: #A2A2A2;
-   font-family: 'Inter', sans-serif;
+.sidebar__btn-icon {
+   min-width: 18px;
+   height: 18px;
+   background: url('../../images/collapse.svg') center no-repeat;
+}
+
+.sidebar__btn-text {
+   margin-left: 12px;
    font-size: 13px;
    font-weight: 500;
    line-height: 121%;
-   margin-left: 12px;
+   transition: all 0.1s; 
+   visibility: visible;
+   opacity: 1;
+   color: #A2A2A2;
+   font-family: 'Inter', sans-serif;
+}
+
+.sidebar__btn-text_hidden {
+   visibility: hidden;
+   opacity: 0;
 }
