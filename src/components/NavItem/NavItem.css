@@ -5,6 +5,10 @@
    padding: 0 6px;
 }
 
+.nav-item:hover {
+   opacity: 0.8;
+}
+
 .nav-item_active {
    border-radius: 8px;
    background-color: #483458;
@@ -16,8 +20,8 @@
    min-width: 24px;
 }
 
-.nav-item__icon_chat {
-   background: url('../../images/chat.svg') center no-repeat;
+.nav-item__icon_sidebar-chat {
+   background: url('../../images/sidebar-chat.svg') center no-repeat;
 }
 
 .nav-item__text {

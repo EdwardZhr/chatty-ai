@@ -1,38 +1,22 @@
-import "./MainScreen.css"
-import React from "react";
-import CardInfo from "../CardInfo/CardInfo";
-import logo from "../../images/logo1.png"
-import microphone from "../../images/microphone.svg"
-
-import toolMagic from "../../images/tool-magic.png"
-import textAction from "../../images/text-action.png"
-import timeClock from "../../images/time-clock.png"
+import './MainScreen.css';
+import { Link } from 'react-router-dom';
+import CardInfo from '../CardInfo/CardInfo';
 
 function MainScreen() {
    return (
-      <>
-         <div className="main-screen">
-            <div className="main-screen__box">
-               <img className="main-screen__img" src={logo} alt="логотип"></img>
-               <h1 className="main-screen__title">Привет, это Chatty AI</h1>
-               <p className="main-screen__sub-title">Прокачай выступление искусственным интеллектом!</p>
-               <form className="main-screen__form">
-                  <div className="main-screen__form-box">
-                     <p className="main-screen__form-text">Нажми на микрофон, чтобы начать</p>
-                     <button className="main-screen__form-btn" type="submit">
-                        <img className="main-screen__form-btn_img" src={microphone} alt="логотип" />
-                     </button>
-                  </div>
-               </form>
-            </div>
-
-            <div className="main-screen__cards">
-               <CardInfo img={toolMagic} text={'Речь в текст'} subText={'Проще говорить, чем печатать'} />
-               <CardInfo img={textAction} text={'Обозначит структуру'} subText={'Исходя из лучших практик сторителлинга'} />
-               <CardInfo img={timeClock} text={'Сократит объём'} subText={'Только самое важное, никто не уснёт'} />
-            </div>
+      <div className='main-screen'>
+         <div className='main-screen__wrapper'>
+            <div className='main-screen__logo'/>
+            <h1 className='main-screen__title'>Chatty AI</h1>
+            <Link to="/recording" className='main-screen__btn'><p>Начать</p><p>›</p></Link>
          </div>
-      </>
+
+         <div className='main-screen__info-cards'>
+            <CardInfo img={'info-chat'} text={'Речь в текст'} subText={`Проще говорить, \n чем печатать`} />
+            <CardInfo img={'info-structure'} text={'Обозначит структуру'} subText={'Основываясь \n на лучших практиках'} />
+            <CardInfo img={'info-volume'} text={'Сократит объём'} subText={'Только самое важное, \n никто не уснёт'} />
+         </div>
+      </div>
    )
 }
 

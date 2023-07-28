@@ -1,7 +1,6 @@
 import "./CardChatAi.css"
 import React from "react";
 import avatarColor from "../../images/avatarColor.svg";
-import imgRandom from "../../images/img-random.svg";
 
 function CardChatAi() {
    return (
@@ -23,7 +22,6 @@ function CardChatAi() {
 
                   <div className="chatAi-card__box">
                      <data className="chatAi-card__box-data">14.08.23</data>
-                     <img className="chatAi-card__box-photo" src={imgRandom} alt="изображеие от ChatAi" />
                      <div>
                         <p className="chatAi-card__box-info">Презентация <br /> Спринта 12</p>
                         <p className="chatAi-card__box-subinfo">UI design kit</p>

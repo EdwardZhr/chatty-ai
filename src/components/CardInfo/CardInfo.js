@@ -1,15 +1,12 @@
-import "./CardInfo.css"
-import React from "react";
+import './CardInfo.css';
 
-function CardInfo(props) {
+function CardInfo({img, text, subText}) {
    return (
-      <>
-         <div className="main-sreen_card">
-            <img className="main-sreen_img" src={props.img} alt="волшебная палочка" />
-            <p className="main-screen__text" >{props.text}</p>
-            <p className="main-screen__subtext" >{props.subText}</p>
-         </div>
-      </>
+      <div className='card-info'>
+         <div className={`card-info__img card-info__img_${img}`}/>
+         <p className='card-info__text'>{text}</p>
+         <p className='card-info__subtext'>{subText}</p>
+      </div>
    )
 }
 

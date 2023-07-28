@@ -1,5 +1,4 @@
-import "./NavItem.css"
-import React from "react";
+import './NavItem.css'
 import { NavLink } from 'react-router-dom';
 
 function NavItem({text, icon, isСollapsed}) {

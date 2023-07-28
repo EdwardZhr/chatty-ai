@@ -1,7 +1,7 @@
 import './Sidebar.css';
-import { useState } from "react";
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import NavItem from "../NavItem/NavItem"
+import NavItem from '../NavItem/NavItem';
 
 function Sidebar() {
    const [isСollapsed, setIsСollapsed] = useState(false)
@@ -23,7 +23,7 @@ function Sidebar() {
          </Link>
             
          <nav className='sidebar__nav'>
-               <NavItem icon={"chat"} text={"Чат"} isСollapsed={isСollapsed} />
+               <NavItem icon={"sidebar-chat"} text={"Чат"} isСollapsed={isСollapsed} />
          </nav>
 
          <div className='sidebar__footer'>
