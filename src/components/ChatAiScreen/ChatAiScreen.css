@@ -6,6 +6,13 @@
    padding-left: 16px;
 }
 
+.chatAiScreen__box-chats {
+   flex: auto;
+   display: flex;
+   flex-direction: column;
+   overflow: auto;
+}
+
 /* chatAiScreen__box */
 .chatAiScreen__box {
    display: flex;
