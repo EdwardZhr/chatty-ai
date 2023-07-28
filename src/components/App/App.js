@@ -1,7 +1,7 @@
 import './App.css';
 //import { useState, useRef, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-//import * as openAiApi from '../../utils/OpenAIApi'
+// import * as openAiApi from '../../utils/OpenAIApi'
 import Sidebar from '../Sidebar/Sidebar';
 import MainScreen from '../MainScreen/MainScreen'
 import ChatAiScreen from '../ChatAiScreen/ChatAiScreen';
