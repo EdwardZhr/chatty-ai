@@ -1,92 +1,119 @@
 import './App.css';
-//import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-// import * as openAiApi from '../../utils/OpenAIApi'
+import * as openAiApi from '../../utils/OpenAIApi'
 import Sidebar from '../Sidebar/Sidebar';
 import MainScreen from '../MainScreen/MainScreen'
 import ChatAiScreen from '../ChatAiScreen/ChatAiScreen';
 
 
 function App() {
-  // const [state, setState] = useState('Initial');
-  // const [mediaRecorder, setMediaRecorder] = useState(null);
-  // const chunksRef = useRef([]);
-  // const [audioURL, setAudioURL] = useState(null)
-  // const [transcription, setTranscription] = useState('');
-  // const [aiResponse, setAiResponse] = useState('');
+  const RECORDING_DURATION = 5000;
+  // const [isRecording, setIsRecording] = useState(false);
+  const [audioInputState, setAudioInputState] = useState('Initial');
+  const [audioURL, setAudioURL] = useState(null);
+  const mediaRecorderRef = useRef(null);
+  const audioBlobRef = useRef(null);
+  const chunksRef = useRef([]);
+  const recordingTimeoutRef = useRef(null);
+  const [recordingTime, setRecordingTime] = useState(0);
+  const intervalRef = useRef(null);
 
-  // useEffect(() => {
-  //   const getUserMedia = async () => {
-  //     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-  //     const recorder = new MediaRecorder(stream);
 
-  //     recorder.ondataavailable = (e) => {
-  //       chunksRef.current.push(e.data);
-  //     }
+  const [transcription, setTranscription] = useState('');
+  const [aiResponse, setAiResponse] = useState('');
 
-  //     recorder.onstop = async () => {
-  //       const audioBlob = new Blob(chunksRef.current, { 'type': 'audio/wav' })
-  //       chunksRef.current = [];
-  //       setAudioURL(window.URL.createObjectURL(audioBlob))
+  useEffect(() => {
+    console.log(audioInputState)
+    if (audioInputState==='Recording') {
+      intervalRef.current = setInterval(() => {
+        setRecordingTime((prevSeconds) => prevSeconds + 1);
+      }, 1000);
+    }
+    return () => clearInterval(intervalRef.current);
+  }, [audioInputState]);
 
-  //       const audioFile = new File([audioBlob], 'audio.wav', { type: 'audio/wav' });
-  //       const formData = new FormData();
-  //       formData.append('file', audioFile);
-  //       formData.append('model', 'whisper-1');
-  //       formData.append('language', 'ru')
+  useEffect(() => {
+    console.log(recordingTime)
+    console.log(RECORDING_DURATION/1000)
+    if (recordingTime >= RECORDING_DURATION/1000) {
+      handleStopRecording();
+    }
+  }, [recordingTime]);
 
-  //       try {
-  //         const transcription = await openAiApi.sendAudio(formData);
-  //         setTranscription(transcription)
-  //         const aiResponse = await openAiApi.sendText(transcription);
-  //         setAiResponse(aiResponse)
-  //       } catch (error) {
-  //         console.log(error.message)
-  //       }
-  //     }
-  //     console.log(state, audioURL, transcription, aiResponse)
-  //     setMediaRecorder(recorder);
-  //   }
-  //   getUserMedia()
-  //     .catch(error => console.log('Error accessing microphone:', error));
-  // }, [state, audioURL, transcription, aiResponse])
+  const getUserMedia = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      return stream;
+    } catch (error) {
+      throw new Error('Ошибка доступа к микрофону: ' + error.message);
+    }
+  }
 
-  // function handleStartRecording() {
-  //   setState('Record')
-  //   mediaRecorder.start()
-  // }
+  const handleStartRecording = async () => {
+    let stream
+    try {
+      stream = await getUserMedia();
+    } catch (error) {
+      console.error(error)
+      return
+    } 
 
-  // function handleStopRecording() {
-  //   setState('Initial')
-  //   mediaRecorder.stop();
-  // };
+    mediaRecorderRef.current = new MediaRecorder(stream);
+
+    mediaRecorderRef.current.ondataavailable = (e) => {
+      chunksRef.current.push(e.data);
+    };
+
+    mediaRecorderRef.current.onstop = () => {
+      const audioBlob = new Blob(chunksRef.current, { 'type': 'audio/wav' })
+      chunksRef.current = [];
+      setAudioURL(window.URL.createObjectURL(audioBlob))
+      audioBlobRef.current = audioBlob;
+    };
+
+    mediaRecorderRef.current.start();
+    setAudioInputState('Recording');
+  }
+
+  const handleStopRecording = () => {
+    if (mediaRecorderRef.current) {
+      mediaRecorderRef.current.stop();
+      setAudioInputState('Pause');
+    }
+  }
+
+  const handleSendRecording = async () => {
+    handleStopRecording()
+    await new Promise(resolve=> setTimeout(resolve, 0))
+    const audioFile = new File([audioBlobRef.current], 'audio.wav', { type: 'audio/wav' });
+    const formData = new FormData();
+    formData.append('file', audioFile);
+    formData.append('model', 'whisper-1');
+
+    try {
+      const transcription = await openAiApi.sendAudio(formData);
+      setTranscription(transcription)
+      const aiResponse = await openAiApi.sendText(transcription);
+      setAiResponse(aiResponse)
+    } catch (error) {
+      console.log(error.message)
+    }
+    setRecordingTime(0);
+    setAudioInputState('Initial')
+  }
 
   return (
-
-    // <div className="container">
-    //   <div className="display">
-    //     {audioURL && <audio controls src={audioURL}>
-    //     </audio>}
-    //     {audioURL && <a href={audioURL} download='audio'>Скачать</a>}
-    //     <div>Вопрос: {transcription}</div>
-    //     <div>Ответ: {aiResponse}</div>
-    //   </div>
-
-    //   <div className="controllers">
-    //     {(state === 'Initial' &&
-    //       <button onClick={handleStartRecording}>Start</button>)
-    //       || (state === 'Record' &&
-    //         <button onClick={handleStopRecording}>Stop</button>)
-    //     }
-    //   </div>
-    //   <div>Тест2</div>
-    // </div>
-
     <div className='App'>
       <Sidebar />
       <Routes>
         <Route path="/" element={<MainScreen />} />
-        <Route path="/recording" element={<ChatAiScreen />} />
+        <Route path="/recording" element={<ChatAiScreen 
+          audioInputState={audioInputState} 
+          onStartRecording={handleStartRecording} 
+          onSendRecording={handleSendRecording}
+          recordingTime={recordingTime}
+          />} />
       </Routes>
     </div >
   );

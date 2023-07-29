@@ -4,7 +4,7 @@ const AUDIO_URL = 'https://api.openai.com/v1/audio/transcriptions';
 const CHAT_URL = 'https://api.openai.com/v1/chat/completions';
 // const TEST_KEY = process.env.REACT_APP_TEST_KEY;
 // const API_KEY = process.env.REACT_APP_APISECRET.split(',').reverse().join('');
-const API_KEY = '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'
+const API_KEY = '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'
 
 export const sendAudio = async (formData) => {
   try {
@@ -17,6 +17,7 @@ export const sendAudio = async (formData) => {
     if (!response.data.text) {
       throw new Error('Ошибка при отправке аудио');
     }
+    console.log(response.data.text)
 
     return response.data.text;
 
