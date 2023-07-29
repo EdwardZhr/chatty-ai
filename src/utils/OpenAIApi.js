@@ -4,7 +4,7 @@ const AUDIO_URL = 'https://api.openai.com/v1/audio/transcriptions';
 const CHAT_URL = 'https://api.openai.com/v1/chat/completions';
 // const TEST_KEY = process.env.REACT_APP_TEST_KEY;
 // const API_KEY = process.env.REACT_APP_APISECRET.split(',').reverse().join('');
-const API_KEY = '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'
+const API_KEY = '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'
 
 export const sendAudio = async (formData) => {
   try {

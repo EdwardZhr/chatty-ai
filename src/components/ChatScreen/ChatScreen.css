@@ -1,0 +1,14 @@
+.chat-screen {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   padding: 5vh 0 0 16px;
+   font-family: 'Inter', sans-serif;
+}
+
+.chat-screen__chat {
+   display: flex;
+   flex-direction: column;
+   overflow: auto;
+   height: 100%;
+}

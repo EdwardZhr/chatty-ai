@@ -4,19 +4,19 @@ import { Routes, Route } from 'react-router-dom';
 import * as openAiApi from '../../utils/OpenAIApi'
 import Sidebar from '../Sidebar/Sidebar';
 import MainScreen from '../MainScreen/MainScreen'
-import ChatAiScreen from '../ChatAiScreen/ChatAiScreen';
+import ChatScreen from '../ChatScreen/ChatScreen';
+import { INITIAL_MESSAGE } from '../../utils/systemMessages';
+import {RECORDING_DURATION} from '../../utils/constants';
 
 
 function App() {
-  const RECORDING_DURATION = 5000;
-  // const [isRecording, setIsRecording] = useState(false);
   const [audioInputState, setAudioInputState] = useState('Initial');
   const [audioURL, setAudioURL] = useState(null);
+  const [recordingTime, setRecordingTime] = useState(0);
+  const [messages, setMessages] = useState([INITIAL_MESSAGE]);
   const mediaRecorderRef = useRef(null);
   const audioBlobRef = useRef(null);
   const chunksRef = useRef([]);
-  const recordingTimeoutRef = useRef(null);
-  const [recordingTime, setRecordingTime] = useState(0);
   const intervalRef = useRef(null);
 
 
@@ -95,7 +95,7 @@ function App() {
       const transcription = await openAiApi.sendAudio(formData);
       setTranscription(transcription)
       const aiResponse = await openAiApi.sendText(transcription);
-      setAiResponse(aiResponse)
+      setMessages([...messages, {isOwner:false, text:`${aiResponse}`}])
     } catch (error) {
       console.log(error.message)
     }
@@ -108,11 +108,12 @@ function App() {
       <Sidebar />
       <Routes>
         <Route path="/" element={<MainScreen />} />
-        <Route path="/recording" element={<ChatAiScreen 
+        <Route path="/recording" element={<ChatScreen 
           audioInputState={audioInputState} 
           onStartRecording={handleStartRecording} 
           onSendRecording={handleSendRecording}
           recordingTime={recordingTime}
+          messages={messages}
           />} />
       </Routes>
     </div >
