@@ -14,14 +14,23 @@
    box-sizing: border-box;
 }
 
-.chatAi-audio__play {
-   background-image: url(../../images/btn-audio.svg);
+.chatAi-audio__btn {
    background-color: #5865F2;
-   background-repeat: no-repeat;
-   background-position: center;
    border-radius: 12px;
    width: 48px;
    height: 48px;
+}
+
+.chatAi-audio__play {
+   background-image: url(../../images/btn-audio.svg);
+   background-repeat: no-repeat;
+   background-position: center;
+   position: relative;
+   z-index: 1;
+}
+
+.chatAi-audio__pause {
+   background-image: url(../../images/btn-audio.svg);
 }
 
 .chatAi-audio__recording {}
