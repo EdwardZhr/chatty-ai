@@ -1,1 +1,1 @@
-export const RECORDING_DURATION = 5000;
+export const RECORDING_DURATION = 600000;
