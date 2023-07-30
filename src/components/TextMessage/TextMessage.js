@@ -11,7 +11,7 @@ function TextMessage({text, type}) {
       <div className='text-message__avatar'>
         <div className='text-message__logo'/>
       </div>
-      <div className='text-message__container' >
+      <div className={type === 'Error' ? 'text-message__container text-message__container_type_error' : 'text-message__container'} >
         <p className='text-message__header' >Chatty AI</p>
         {type === 'Waiting' && <div className='text-message__ellipsis'/>}
         <p className='text-message__text'>{text}</p>

@@ -5,7 +5,7 @@ import * as openAiApi from '../../utils/OpenAIApi'
 import Sidebar from '../Sidebar/Sidebar';
 import MainScreen from '../MainScreen/MainScreen'
 import ChatScreen from '../ChatScreen/ChatScreen';
-import { INITIAL_MESSAGE } from '../../utils/systemMessages';
+import { INITIAL_MESSAGE, MICROPHONE_ERROR, RESPONSE_ERROR} from '../../utils/systemMessages';
 import {RECORDING_DURATION} from '../../utils/constants';
 
 
@@ -45,6 +45,7 @@ function App() {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       return stream;
     } catch (error) {
+      setMessages([...messages, MICROPHONE_ERROR]);
       throw new Error('Ошибка доступа к микрофону: ' + error.message);
     }
   }
@@ -58,6 +59,7 @@ function App() {
       stream = null
       mediaRecorderRef.current = null
     } catch (error) {
+      setMessages([...messages, MICROPHONE_ERROR]);
       throw new Error('Ошибка доступа к микрофону: ' + error.message);
     }
   }
@@ -115,6 +117,7 @@ function App() {
       const aiResponse = await openAiApi.sendText(transcription);
       setMessages([...messages, {isOwner:true, src: window.URL.createObjectURL(audioBlobRef.current)}, {isOwner:false, text:`${aiResponse}`, type:'Response'}])
     } catch (error) {
+      setMessages([...messages, {isOwner:true, src: window.URL.createObjectURL(audioBlobRef.current)}, RESPONSE_ERROR])
       console.log(error.message)
     }
     setRecordingTime(0);
