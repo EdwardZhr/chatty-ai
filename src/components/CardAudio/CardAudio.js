@@ -136,7 +136,7 @@ const AudioPlayer = ({ url }) => {
    };
 
    return (
-      <div>
+      <div className='chatAi-audio'>
          <div id="waveform" ref={waveformRef} />
          <button onClick={handlePlayPause}>
             {isPlaying ? 'Pause' : 'Play'}

@@ -1,5 +1,5 @@
 .recording-input {
-    margin-top: 6px;
+    margin: 6px 18px 0 0;
     box-sizing: border-box;
     padding: 12px 24px;
     display: flex;
@@ -7,7 +7,7 @@
     height: 72px;
     border-radius: 20px;
     border: 1px solid #E6E6E6;
- }
+}
 
 .recording-input__text {
     font-size: 16px;
@@ -16,7 +16,7 @@
     letter-spacing: 0.15px;
     color: #CCCCCC;
     width: 100%;
- }
+}
 
 .recording-input__timer {
     font-size: 14px;
@@ -25,10 +25,10 @@
     white-space: nowrap;
 }
 
- .recording-input__track {
+.recording-input__track {
     margin-left: 50px;
     width: 100%;
-  }
+}
 
 .recording-input__btn {
     min-width: 48px;
@@ -56,12 +56,12 @@
 
 .recording-input__icon_start {
     background: url('../../images/start.svg') center no-repeat;
- }
+}
 
 .recording-input__icon_send {
-   background: url('../../images/send.svg') center no-repeat;
+    background: url('../../images/send.svg') center no-repeat;
 }
 
 .recording-input__icon_delete {
     background: url('../../images/delete.svg') center no-repeat;
- }
+}
