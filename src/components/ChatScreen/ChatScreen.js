@@ -3,7 +3,6 @@ import RecordingInput from '../RecordingInput/RecordingInput';
 import TextMessage from '../TextMessage/TextMessage';
 import AudioMessage from '../AudioMessage/AudioMessage';
 
-
 function ChatScreen({audioInputState, onStartRecording, onSendRecording, onDeleteRecording, recordingTime, messages, }) {
   return (
     <div className='chat-screen' >
