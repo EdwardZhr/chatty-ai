@@ -11,16 +11,12 @@ import {RECORDING_DURATION} from '../../utils/constants';
 
 function App() {
   const [audioInputState, setAudioInputState] = useState('Initial');
-  const [audioURL, setAudioURL] = useState(null);
   const [recordingTime, setRecordingTime] = useState(0);
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);
   const mediaRecorderRef = useRef(null);
   const audioBlobRef = useRef(null);
   const chunksRef = useRef([]);
   const intervalRef = useRef(null);
-
-
-  const [transcription, setTranscription] = useState('');
 
   useEffect(()=>{
     console.log(messages)
@@ -53,6 +49,19 @@ function App() {
     }
   }
 
+  const stopUserMedia = async () => {
+    try {
+      let stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      stream.getTracks().forEach(track => {
+        track.stop();
+      });
+      stream = null
+      mediaRecorderRef.current = null
+    } catch (error) {
+      throw new Error('Ошибка доступа к микрофону: ' + error.message);
+    }
+  }
+
   const handleStartRecording = async () => {
     let stream
     try {
@@ -71,7 +80,6 @@ function App() {
     mediaRecorderRef.current.onstop = () => {
       const audioBlob = new Blob(chunksRef.current, { 'type': 'audio/wav' })
       chunksRef.current = [];
-      setAudioURL(window.URL.createObjectURL(audioBlob))
       audioBlobRef.current = audioBlob;
     };
 
@@ -85,11 +93,18 @@ function App() {
       setAudioInputState('Pause');
     }
   }
-
+  
   const handleSendRecording = async () => {
     handleStopRecording()
+    if (recordingTime < 0.8) {
+      setAudioInputState('Initial')
+      setRecordingTime(0);
+      stopUserMedia();
+      return
+    }
+    setAudioInputState('Waiting')
     await new Promise(resolve=> setTimeout(resolve, 0))
-    setMessages([...messages, {isOwner:true, src: window.URL.createObjectURL(audioBlobRef.current)}])
+    setMessages([...messages, {isOwner:true, src: window.URL.createObjectURL(audioBlobRef.current)}, {isOwner:false, text:'', type:'Waiting'}]);
     const audioFile = new File([audioBlobRef.current], 'audio.wav', { type: 'audio/wav' });
     const formData = new FormData();
     formData.append('file', audioFile);
@@ -97,18 +112,22 @@ function App() {
 
     try {
       const transcription = await openAiApi.sendAudio(formData);
-      setTranscription(transcription)
       const aiResponse = await openAiApi.sendText(transcription);
-      console.log(messages)
-      setMessages([...messages, {isOwner:true, src: window.URL.createObjectURL(audioBlobRef.current)}, {isOwner:false, text:`${aiResponse}`}])
+      setMessages([...messages, {isOwner:true, src: window.URL.createObjectURL(audioBlobRef.current)}, {isOwner:false, text:`${aiResponse}`, type:'Response'}])
     } catch (error) {
       console.log(error.message)
     }
     setRecordingTime(0);
+
+    stopUserMedia();
+
     setAudioInputState('Initial')
   }
 
-  const handlePlayAudio = (src) => {
+  const handleDeleteRecording = () => {
+    setAudioInputState('Initial')
+    setRecordingTime(0);
+    stopUserMedia();
   }
 
   return (
@@ -120,7 +139,7 @@ function App() {
           audioInputState={audioInputState} 
           onStartRecording={handleStartRecording} 
           onSendRecording={handleSendRecording}
-          onPlayAudio={handlePlayAudio}
+          onDeleteRecording={handleDeleteRecording}
           recordingTime={recordingTime}
           messages={messages}
           />} />

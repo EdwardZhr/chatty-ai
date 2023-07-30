@@ -39,3 +39,69 @@
    line-height: 24px;
    letter-spacing: -0.01em;
 }
+
+.text-message__ellipsis {
+   width: 20px;
+   height: 20px;
+   font-size: 20px; 
+   line-height: 1;
+   white-space: nowrap;
+   overflow: hidden;
+   color: white;
+}
+
+@keyframes text-message__ellipsis {
+   0% {
+     content: ''; 
+   }
+   33% {
+     content: '•';
+   }
+   66% {
+     content: '••';
+   }
+   100% {
+     content: '•••';
+   }
+ }
+ 
+ .text-message__ellipsis::after {
+   content: '';
+   display: inline-block;
+   width: 0;
+   animation: text-message__ellipsis 1s steps(4) infinite;
+ }
+
+ .text-message__copy-btn {
+   box-sizing: border-box;
+   padding: 4px;
+   display: flex;
+   align-items: center;
+   border: #454545 1px solid;
+   border-radius: 4px;
+   background-color: #272B30;
+   margin-top: 20px;
+   min-width: 130px;
+   min-height: 32px;
+   margin-left: auto;
+   cursor: pointer;
+ }
+
+ .text-message__copy-btn:hover {
+   opacity: 0.5;
+ }
+
+ .text-message__copy-icon {
+   min-width: 24px;
+   height: 24px;
+   background: url('../../images/copy.svg') center no-repeat;
+ }
+
+ .text-message__copy-text {
+   margin-left: 4px;
+   font-size: 13px;
+   font-weight: 600;
+   line-height: 16px;
+   text-align: center;
+   color: white
+ }
