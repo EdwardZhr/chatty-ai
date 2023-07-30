@@ -1,19 +1,18 @@
 import './ChatScreen.css'
 import RecordingInput from '../RecordingInput/RecordingInput';
-import CardChatAi from '../TextMessage/TextMessage';
-import CardAudio from '../CardAudio/CardAudio';
-import url from '../../Mp3/rington.mp3'
+import TextMessage from '../TextMessage/TextMessage';
+import AudioMessage from '../AudioMessage/AudioMessage';
 
 
-function ChatScreen({audioInputState, onStartRecording, onSendRecording, recordingTime, messages}) {
+function ChatScreen({audioInputState, onStartRecording, onSendRecording, recordingTime, messages, }) {
 
    return (
       <div className='chat-screen' >
          <div className='chat-screen__chat'>
             {messages.map((message, index) => {
                return message.isOwner === true ? 
-                  <CardAudio key={index} url={url} /> :
-                  <CardChatAi key={index} text={message.text}/>
+                  <AudioMessage key={index} src={message.src}/> :
+                  <TextMessage key={index} text={message.text}/>
             }
             )}
          </div >

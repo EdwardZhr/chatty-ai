@@ -21,7 +21,10 @@ function App() {
 
 
   const [transcription, setTranscription] = useState('');
-  const [aiResponse, setAiResponse] = useState('');
+
+  useEffect(()=>{
+    console.log(messages)
+  }, [messages])
 
   useEffect(() => {
     console.log(audioInputState)
@@ -86,6 +89,7 @@ function App() {
   const handleSendRecording = async () => {
     handleStopRecording()
     await new Promise(resolve=> setTimeout(resolve, 0))
+    setMessages([...messages, {isOwner:true, src: window.URL.createObjectURL(audioBlobRef.current)}])
     const audioFile = new File([audioBlobRef.current], 'audio.wav', { type: 'audio/wav' });
     const formData = new FormData();
     formData.append('file', audioFile);
@@ -95,12 +99,16 @@ function App() {
       const transcription = await openAiApi.sendAudio(formData);
       setTranscription(transcription)
       const aiResponse = await openAiApi.sendText(transcription);
-      setMessages([...messages, {isOwner:false, text:`${aiResponse}`}])
+      console.log(messages)
+      setMessages([...messages, {isOwner:true, src: window.URL.createObjectURL(audioBlobRef.current)}, {isOwner:false, text:`${aiResponse}`}])
     } catch (error) {
       console.log(error.message)
     }
     setRecordingTime(0);
     setAudioInputState('Initial')
+  }
+
+  const handlePlayAudio = (src) => {
   }
 
   return (
@@ -112,6 +120,7 @@ function App() {
           audioInputState={audioInputState} 
           onStartRecording={handleStartRecording} 
           onSendRecording={handleSendRecording}
+          onPlayAudio={handlePlayAudio}
           recordingTime={recordingTime}
           messages={messages}
           />} />
