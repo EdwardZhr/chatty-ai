@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/chatty-ai/static/css/main.b479396c.css",
-    "main.js": "/chatty-ai/static/js/main.317f9ee9.js",
+    "main.css": "/chatty-ai/static/css/main.fce8af61.css",
+    "main.js": "/chatty-ai/static/js/main.a4d084b4.js",
     "static/js/787.7ffbbae1.chunk.js": "/chatty-ai/static/js/787.7ffbbae1.chunk.js",
     "static/media/main-logo.svg": "/chatty-ai/static/media/main-logo.42523019f866047b465f.svg",
     "static/media/delete.svg": "/chatty-ai/static/media/delete.351ab7395b0c80582c20.svg",
@@ -17,12 +17,12 @@
     "static/media/arrowDown.svg": "/chatty-ai/static/media/arrowDown.f73dcab8d3752326791e.svg",
     "static/media/arrowTop.svg": "/chatty-ai/static/media/arrowTop.9e61d4e1b1b036f78644.svg",
     "static/media/control-stop.svg": "/chatty-ai/static/media/control-stop.ffc9660f9c37df107759.svg",
-    "main.b479396c.css.map": "/chatty-ai/static/css/main.b479396c.css.map",
-    "main.317f9ee9.js.map": "/chatty-ai/static/js/main.317f9ee9.js.map",
+    "main.fce8af61.css.map": "/chatty-ai/static/css/main.fce8af61.css.map",
+    "main.a4d084b4.js.map": "/chatty-ai/static/js/main.a4d084b4.js.map",
     "787.7ffbbae1.chunk.js.map": "/chatty-ai/static/js/787.7ffbbae1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b479396c.css",
-    "static/js/main.317f9ee9.js"
+    "static/css/main.fce8af61.css",
+    "static/js/main.a4d084b4.js"
   ]
 }
