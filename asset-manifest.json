@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/chatty-ai/static/css/main.1c60a80a.css",
-    "main.js": "/chatty-ai/static/js/main.7d9b4318.js",
+    "main.css": "/chatty-ai/static/css/main.b479396c.css",
+    "main.js": "/chatty-ai/static/js/main.4a15b4ea.js",
     "static/js/787.7ffbbae1.chunk.js": "/chatty-ai/static/js/787.7ffbbae1.chunk.js",
     "static/media/main-logo.svg": "/chatty-ai/static/media/main-logo.42523019f866047b465f.svg",
     "static/media/delete.svg": "/chatty-ai/static/media/delete.351ab7395b0c80582c20.svg",
@@ -14,13 +14,15 @@
     "static/media/collapse.svg": "/chatty-ai/static/media/collapse.2c562da343e351229260.svg",
     "static/media/start.svg": "/chatty-ai/static/media/start.16ef1aa720923396008f.svg",
     "static/media/control-play.svg": "/chatty-ai/static/media/control-play.bae6f665be5b7ec733e7.svg",
+    "static/media/arrowDown.svg": "/chatty-ai/static/media/arrowDown.f73dcab8d3752326791e.svg",
+    "static/media/arrowTop.svg": "/chatty-ai/static/media/arrowTop.9e61d4e1b1b036f78644.svg",
     "static/media/control-stop.svg": "/chatty-ai/static/media/control-stop.ffc9660f9c37df107759.svg",
-    "main.1c60a80a.css.map": "/chatty-ai/static/css/main.1c60a80a.css.map",
-    "main.7d9b4318.js.map": "/chatty-ai/static/js/main.7d9b4318.js.map",
+    "main.b479396c.css.map": "/chatty-ai/static/css/main.b479396c.css.map",
+    "main.4a15b4ea.js.map": "/chatty-ai/static/js/main.4a15b4ea.js.map",
     "787.7ffbbae1.chunk.js.map": "/chatty-ai/static/js/787.7ffbbae1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c60a80a.css",
-    "static/js/main.7d9b4318.js"
+    "static/css/main.b479396c.css",
+    "static/js/main.4a15b4ea.js"
   ]
 }
