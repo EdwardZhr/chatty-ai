@@ -8,6 +8,7 @@ import AudioMessage from '../AudioMessage/AudioMessage';
 function ChatScreen({ audioInputState, onStartRecording, onSendRecording, onDeleteRecording, recordingTime, messages, }) {
 
    const messagesEndRef = useRef(null);
+   console.log('messagesEndRef', messagesEndRef)
    const scrollToBottom = () => {
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
    };
