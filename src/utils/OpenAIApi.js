@@ -2,8 +2,7 @@ import axios from 'axios'
 
 const AUDIO_URL = 'https://api.openai.com/v1/audio/transcriptions';
 const CHAT_URL = 'https://api.openai.com/v1/chat/completions';
-// const API_KEY = process.env.REACT_APP_APISECRET.split(',').reverse().join('');
-const API_KEY = 'sk-dYaQwia032CIQtS93DlwT3BlbkFJRxYi1kPDxSRyml2ZabNZS';
+const API_KEY = process.env.REACT_APP_APISECRET.split(',').reverse().join('');
 
 export const sendAudio = async (formData) => {
   try {
@@ -33,7 +32,7 @@ export const sendText = async (text) => {
       messages: [
         {
           role: 'user',
-          content: text,
+          content: `Структурируй текст и очисти от слов паразитов: '${text}'. В своем ответе не забудь вставить знаки перевода строки`,
         },
       ],
     }, {

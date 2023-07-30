@@ -18,12 +18,7 @@ function App() {
   const chunksRef = useRef([]);
   const intervalRef = useRef(null);
 
-  useEffect(()=>{
-    console.log(messages)
-  }, [messages])
-
   useEffect(() => {
-    console.log(audioInputState)
     if (audioInputState==='Recording') {
       intervalRef.current = setInterval(() => {
         setRecordingTime((prevSeconds) => prevSeconds + 1);
@@ -33,8 +28,6 @@ function App() {
   }, [audioInputState]);
 
   useEffect(() => {
-    console.log(recordingTime)
-    console.log(RECORDING_DURATION/1000)
     if (recordingTime >= RECORDING_DURATION/1000) {
       handleStopRecording();
     }

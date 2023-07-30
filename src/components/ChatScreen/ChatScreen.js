@@ -1,5 +1,5 @@
 import './ChatScreen.css'
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import RecordingInput from '../RecordingInput/RecordingInput';
 import TextMessage from '../TextMessage/TextMessage';
 import AudioMessage from '../AudioMessage/AudioMessage';
