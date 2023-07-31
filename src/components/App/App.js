@@ -5,9 +5,8 @@ import * as openAiApi from '../../utils/OpenAIApi'
 import Sidebar from '../Sidebar/Sidebar';
 import MainScreen from '../MainScreen/MainScreen'
 import ChatScreen from '../ChatScreen/ChatScreen';
-import { INITIAL_MESSAGE, MICROPHONE_ERROR, RESPONSE_ERROR} from '../../utils/systemMessages';
-import {RECORDING_DURATION} from '../../utils/constants';
-
+import { INITIAL_MESSAGE, MICROPHONE_ERROR, RESPONSE_ERROR } from '../../utils/systemMessages';
+import { RECORDING_DURATION } from '../../utils/constants';
 
 function App() {
   const [audioInputState, setAudioInputState] = useState('Initial');
@@ -19,7 +18,7 @@ function App() {
   const intervalRef = useRef(null);
 
   useEffect(() => {
-    if (audioInputState==='Recording') {
+    if (audioInputState === 'Recording') {
       intervalRef.current = setInterval(() => {
         setRecordingTime((prevSeconds) => prevSeconds + 1);
       }, 1000);
@@ -28,7 +27,7 @@ function App() {
   }, [audioInputState]);
 
   useEffect(() => {
-    if (recordingTime >= RECORDING_DURATION/1000) {
+    if (recordingTime >= RECORDING_DURATION / 1000) {
       handleStopRecording();
     }
   }, [recordingTime]);
@@ -64,7 +63,7 @@ function App() {
     } catch (error) {
       console.error(error)
       return
-    } 
+    }
 
     mediaRecorderRef.current = new MediaRecorder(stream);
 
@@ -88,7 +87,7 @@ function App() {
       setAudioInputState('Pause');
     }
   }
-  
+
   const handleSendRecording = async () => {
     handleStopRecording()
     if (recordingTime < 0.8) {
@@ -98,8 +97,8 @@ function App() {
       return
     }
     setAudioInputState('Waiting')
-    await new Promise(resolve=> setTimeout(resolve, 0))
-    setMessages([...messages, {isOwner:true, src: window.URL.createObjectURL(audioBlobRef.current)}, {isOwner:false, text:'', type:'Waiting'}]);
+    await new Promise(resolve => setTimeout(resolve, 0))
+    setMessages([...messages, { isOwner: true, src: window.URL.createObjectURL(audioBlobRef.current) }, { isOwner: false, text: '', type: 'Waiting' }]);
     const audioFile = new File([audioBlobRef.current], 'audio.wav', { type: 'audio/wav' });
     const formData = new FormData();
     formData.append('file', audioFile);
@@ -108,9 +107,9 @@ function App() {
     try {
       const transcription = await openAiApi.sendAudio(formData);
       const aiResponse = await openAiApi.sendText(transcription);
-      setMessages([...messages, {isOwner:true, src: window.URL.createObjectURL(audioBlobRef.current)}, {isOwner:false, text:`${aiResponse}`, type:'Response'}])
+      setMessages([...messages, { isOwner: true, src: window.URL.createObjectURL(audioBlobRef.current) }, { isOwner: false, text: `${aiResponse}`, type: 'Response' }])
     } catch (error) {
-      setMessages([...messages, {isOwner:true, src: window.URL.createObjectURL(audioBlobRef.current)}, RESPONSE_ERROR])
+      setMessages([...messages, { isOwner: true, src: window.URL.createObjectURL(audioBlobRef.current) }, RESPONSE_ERROR])
       console.log(error.message)
     }
     setRecordingTime(0);
@@ -131,14 +130,14 @@ function App() {
       <Sidebar />
       <Routes>
         <Route path="/" element={<MainScreen />} />
-        <Route path="/recording" element={<ChatScreen 
-          audioInputState={audioInputState} 
-          onStartRecording={handleStartRecording} 
+        <Route path="/recording" element={<ChatScreen
+          audioInputState={audioInputState}
+          onStartRecording={handleStartRecording}
           onSendRecording={handleSendRecording}
           onDeleteRecording={handleDeleteRecording}
           recordingTime={recordingTime}
           messages={messages}
-          />} />
+        />} />
       </Routes>
     </div >
   );

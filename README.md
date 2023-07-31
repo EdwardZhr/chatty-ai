@@ -1,68 +1,60 @@
+# Chatty AI
 
+## О проекте:
+Chatty AI - это голосовой помощник на основе искусственного интеллекта, который позволяет пользователям задать вопрос нейросети посредством записи голоса и получить ответ текстом.
+С помощью Chatty AI ты можешь улучшить свою речь и сделать ее по-настоящему грамотной и красивой с помощью нашего голосового помощника Chatty AI. Он проанализирует твою речь на любом языке, улучшит ее и сделает ее более эффективной. 
 
-## Available Scripts
+##### Проект можно посмотреть по этой [ссылке](https://edwardzhr.github.io/chatty-ai)
 
-In the project directory, you can run:
+## Инструкция по сборке и запуску
+Этот проект был загружен с помощью приложения  Create React App.
+Для установки и запуска проекта, необходим  [NodeJS](https://nodejs.org/ru) v8+ и [Git](https://git-scm.com/).
 
-### `npm start`
+**Клонируем репозиторий себе на ПК: c помощью команды**
+```
+ $ git clone ссылка на репозитории
+```
+**Устанавливаем зависимости** 
+```
+$ npm i
+```
+ **Запуск сервера в режиме разработки**
+ ```
+ $ npm starе
+ ```
+  **Создание билда**
+ ```
+ $ npm build
+ ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Методы и технологий используемые на сайте
+* React
+* CRA
+* React-Hook
+* React-Router
+* API
+* Axios
+* JS
+* CSS
+* Flex-box;
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Ссылки на стороние фреймворки, библиотеки и шрифты
 
-### `npm test`
+* [Фреймворк React](https://react.dev/)
+* [Библиотека React-router-dom ](https://www.npmjs.com/package/react-router-dom)
+* [Библиотека wavesurfer.js](https://wavesurfer-js.org/)
+* [Шрифт Inter](https://fonts.google.com/specimen/Inter?query=Inter)
+* [Шрифт NT Somic](https://fontesk.com/nt-somic-typeface/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## API котрые используются на сайте
 
-### `npm run build`
+1. [MediaRecorder](https://developer.mozilla.org/ru/docs/Web/API/MediaRecorder) -  для записи медиа файлов
+2. [OpenAi](https://platform.openai.com/docs/api-reference) - преобразует голос в текс и позволяет общаться с чатом GPT-3 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+___
+## О команде участвовавшая в проекте
+1. Шификова Лиана является **Проджект-менеджер.** Закончила курс «Менеджер-проектов в IT» от Яндекс.Практикум
+2. Самойлова Камила Игоревна является **Дизайнер.** Закончила курс «Продуктовый-дизайн» от Яндекс.Практикум
+3. Швецова Евгения Александровна **Дизайнер.** Закочила курст «Продуктовый-дизайн» от Яндекс.Практикум
+4. Жребец Эдвард Витальевич является **Фронтенд-разработчик.** Закачил курс «Фронтенд-разработчик» от Яндекс.Практикум
+5. Морарь Василий Геннадьевич является **Фронтенд-разработчик.** Закчил курс «Фронтенд-разработчик» от Яндекс.Практикум 
