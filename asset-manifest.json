@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/chatty-ai/static/css/main.fce8af61.css",
-    "main.js": "/chatty-ai/static/js/main.ee79e6d6.js",
-    "static/js/787.7ffbbae1.chunk.js": "/chatty-ai/static/js/787.7ffbbae1.chunk.js",
-    "static/media/main-logo.svg": "/chatty-ai/static/media/main-logo.42523019f866047b465f.svg",
-    "static/media/delete.svg": "/chatty-ai/static/media/delete.351ab7395b0c80582c20.svg",
-    "static/media/sidebar-chat.svg": "/chatty-ai/static/media/sidebar-chat.85f2c5cb17341849c10d.svg",
-    "static/media/logo.svg": "/chatty-ai/static/media/logo.daeab6e2bad10d19d650.svg",
-    "static/media/message-logo.svg": "/chatty-ai/static/media/message-logo.dea0f166e75e2bc98a02.svg",
-    "static/media/copy.svg": "/chatty-ai/static/media/copy.0b7f4ac913a2cc19146c.svg",
-    "static/media/send.svg": "/chatty-ai/static/media/send.b8961de59ce6975c18eb.svg",
-    "index.html": "/chatty-ai/index.html",
-    "static/media/collapse.svg": "/chatty-ai/static/media/collapse.2c562da343e351229260.svg",
-    "static/media/start.svg": "/chatty-ai/static/media/start.16ef1aa720923396008f.svg",
-    "static/media/control-play.svg": "/chatty-ai/static/media/control-play.bae6f665be5b7ec733e7.svg",
-    "static/media/arrowDown.svg": "/chatty-ai/static/media/arrowDown.f73dcab8d3752326791e.svg",
-    "static/media/arrowTop.svg": "/chatty-ai/static/media/arrowTop.9e61d4e1b1b036f78644.svg",
-    "static/media/control-stop.svg": "/chatty-ai/static/media/control-stop.ffc9660f9c37df107759.svg",
-    "main.fce8af61.css.map": "/chatty-ai/static/css/main.fce8af61.css.map",
-    "main.ee79e6d6.js.map": "/chatty-ai/static/js/main.ee79e6d6.js.map",
-    "787.7ffbbae1.chunk.js.map": "/chatty-ai/static/js/787.7ffbbae1.chunk.js.map"
+    "main.css": "./static/css/main.9dbff793.css",
+    "main.js": "./static/js/main.68fd65f1.js",
+    "static/js/787.7ffbbae1.chunk.js": "./static/js/787.7ffbbae1.chunk.js",
+    "static/media/main-logo.svg": "./static/media/main-logo.42523019f866047b465f.svg",
+    "static/media/delete.svg": "./static/media/delete.351ab7395b0c80582c20.svg",
+    "static/media/sidebar-chat.svg": "./static/media/sidebar-chat.85f2c5cb17341849c10d.svg",
+    "static/media/logo.svg": "./static/media/logo.daeab6e2bad10d19d650.svg",
+    "static/media/message-logo.svg": "./static/media/message-logo.dea0f166e75e2bc98a02.svg",
+    "static/media/copy.svg": "./static/media/copy.0b7f4ac913a2cc19146c.svg",
+    "static/media/send.svg": "./static/media/send.b8961de59ce6975c18eb.svg",
+    "index.html": "./index.html",
+    "static/media/collapse.svg": "./static/media/collapse.2c562da343e351229260.svg",
+    "static/media/start.svg": "./static/media/start.16ef1aa720923396008f.svg",
+    "static/media/control-play.svg": "./static/media/control-play.bae6f665be5b7ec733e7.svg",
+    "static/media/arrowDown.svg": "./static/media/arrowDown.f73dcab8d3752326791e.svg",
+    "static/media/arrowTop.svg": "./static/media/arrowTop.9e61d4e1b1b036f78644.svg",
+    "static/media/control-stop.svg": "./static/media/control-stop.ffc9660f9c37df107759.svg",
+    "main.9dbff793.css.map": "./static/css/main.9dbff793.css.map",
+    "main.68fd65f1.js.map": "./static/js/main.68fd65f1.js.map",
+    "787.7ffbbae1.chunk.js.map": "./static/js/787.7ffbbae1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fce8af61.css",
-    "static/js/main.ee79e6d6.js"
+    "static/css/main.9dbff793.css",
+    "static/js/main.68fd65f1.js"
   ]
 }
