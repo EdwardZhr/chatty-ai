@@ -52,7 +52,6 @@ function AudioMessage({ src }) {
     if (currentAudioMessage) {
       currentAudioMessage.pause();
       setIsPlaying(false);
-      console.log('first')
       currentAudioMessage = null;
     }
   };
@@ -61,7 +60,6 @@ function AudioMessage({ src }) {
     stopCurrentAudioMessage();
     if (!isPlaying) {
       setIsPlaying(false);
-      console.log('two')
       wavesurfer.current.play();
       currentAudioMessage = wavesurfer.current;
     }
