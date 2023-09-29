@@ -19,8 +19,8 @@ $ npm i
 ```
  **Локальная найстройка**
  ```
-В файле utils/OpenAIApi.js необходимо закоментировать 5 строку и раскоментировать 6 строку.
-Необходимо создать .env файл и указать собственный ключ API https://platform.openai.com/account/api-keys 
+Необходимо создать .env файл и указать собственный ключ API https://platform.openai.com/account/api-keys
+В файле utils/OpenAIApi.js необходимо заменить 5 строку на "const API_KEY = process.env.REACT_APP_APISECRET"
 
  ```
  **Запуск сервера в режиме разработки**
