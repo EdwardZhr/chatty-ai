@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/chatty-ai/static/css/main.87b8884d.css",
-    "main.js": "/chatty-ai/static/js/main.dc3be13b.js",
+    "main.css": "/chatty-ai/static/css/main.fce8af61.css",
+    "main.js": "/chatty-ai/static/js/main.7b8805ba.js",
     "static/js/787.7ffbbae1.chunk.js": "/chatty-ai/static/js/787.7ffbbae1.chunk.js",
     "static/media/main-logo.svg": "/chatty-ai/static/media/main-logo.42523019f866047b465f.svg",
     "static/media/delete.svg": "/chatty-ai/static/media/delete.351ab7395b0c80582c20.svg",
-    "static/media/sidebar-chat.svg": "/chatty-ai/static/media/sidebar-chat.921861d888e2c45b8f7e.svg",
-    "static/media/logo.svg": "/chatty-ai/static/media/logo.8c097efdc76596d71687.svg",
+    "static/media/sidebar-chat.svg": "/chatty-ai/static/media/sidebar-chat.85f2c5cb17341849c10d.svg",
+    "static/media/logo.svg": "/chatty-ai/static/media/logo.daeab6e2bad10d19d650.svg",
     "static/media/message-logo.svg": "/chatty-ai/static/media/message-logo.dea0f166e75e2bc98a02.svg",
     "static/media/copy.svg": "/chatty-ai/static/media/copy.0b7f4ac913a2cc19146c.svg",
     "static/media/send.svg": "/chatty-ai/static/media/send.b8961de59ce6975c18eb.svg",
@@ -14,15 +14,15 @@
     "static/media/collapse.svg": "/chatty-ai/static/media/collapse.2c562da343e351229260.svg",
     "static/media/start.svg": "/chatty-ai/static/media/start.16ef1aa720923396008f.svg",
     "static/media/control-play.svg": "/chatty-ai/static/media/control-play.bae6f665be5b7ec733e7.svg",
-    "static/media/arrowDown.svg": "/chatty-ai/static/media/arrowDown.fb6b4f07f845881aa821.svg",
-    "static/media/arrowTop.svg": "/chatty-ai/static/media/arrowTop.e3312585aedf47bbc584.svg",
+    "static/media/arrowDown.svg": "/chatty-ai/static/media/arrowDown.f73dcab8d3752326791e.svg",
+    "static/media/arrowTop.svg": "/chatty-ai/static/media/arrowTop.9e61d4e1b1b036f78644.svg",
     "static/media/control-stop.svg": "/chatty-ai/static/media/control-stop.ffc9660f9c37df107759.svg",
-    "main.87b8884d.css.map": "/chatty-ai/static/css/main.87b8884d.css.map",
-    "main.dc3be13b.js.map": "/chatty-ai/static/js/main.dc3be13b.js.map",
+    "main.fce8af61.css.map": "/chatty-ai/static/css/main.fce8af61.css.map",
+    "main.7b8805ba.js.map": "/chatty-ai/static/js/main.7b8805ba.js.map",
     "787.7ffbbae1.chunk.js.map": "/chatty-ai/static/js/787.7ffbbae1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.87b8884d.css",
-    "static/js/main.dc3be13b.js"
+    "static/css/main.fce8af61.css",
+    "static/js/main.7b8805ba.js"
   ]
 }
