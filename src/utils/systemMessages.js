@@ -14,3 +14,9 @@ export const RESPONSE_ERROR = {
   text: 'Что-то пошло не так, попробуй позже',
   type: 'Error'
 };
+
+export const VPN_ERROR = {
+  isOwner: false,
+  text: 'Чтобы воспользоваться сервисов, необходимо включить VPN',
+  type: 'Error'
+};
